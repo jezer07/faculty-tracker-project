@@ -71,7 +71,9 @@
         </div>
 
         <div class="container">
-<?php include('../mysql_connect.php');?>
+<?php include('../mysql_connect.php');
+session_start();
+?>
             <!-- Main hero unit for a primary marketing message or call to action -->
 
             <!-- Example row of columns -->

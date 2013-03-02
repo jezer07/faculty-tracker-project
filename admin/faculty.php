@@ -13,12 +13,34 @@
         </div><!--/span-->
         
                 <div class="span5">
-               <table class="table">
-               <tr><td>Faculty ID</td><td>Name</td><td>Email</td><td>Contact No.</td><td>Action</td></tr>
-               <tr><td>Admin</td><td>Administrator</td><td>Name</td><td>Name</td><td><a class="btn" href="#"><i class="icon-edit"></i></a><a class="btn" href="#"><i class="icon-remove"></i></a></td></tr>
-               
-               </table>
-               
+               <?php
+                        $rFaculty=@mysql_query("select * from faculties");
+                                        
+                                $i=1;
+                                echo "<table class='table' border='1'>";
+                                echo "<tr>";
+                                echo "<td>Faculty ID </td>";
+                                echo "<td>Name </td>";
+                                echo "<td>Contact No</td>";
+								echo "<td>Email</td>";
+								echo "<td>Action</td>";
+                                echo "</tr>";
+                                        
+                                while($row=mysql_fetch_array($rFaculty))
+                                {
+                                        
+                                echo "<tr>";
+                                echo "<td>$row[0]</td>";
+                                echo "<td>$row[1]</td>";
+								echo "<td>$row[2]</td>";
+                                echo "<td>$row[3]</td>";
+								echo "<td><form action='editusers.php' method='post'><input type='hidden' name='userid' value='$row[0]'><button type='submit'><i class='icon-edit'></i></button></form><a class='btn' href='#'><i class='icon-remove'></i></a></td>";
+                                echo "</tr>";
+                                $i++;
+                        }
+                                        echo "</table>";
+
+        ?>
                    
             	</div>
 
