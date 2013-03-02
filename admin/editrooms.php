@@ -12,7 +12,9 @@
           </div><!--/.well -->
         </div><!--/span-->
         
-                <div class="span4">
+                 <div class="span9">
+                <fieldset>
+    <legend>Edit Rooms</legend>
                <?php
                //edit faculty  
                                 $id=$_GET['id'];
@@ -32,7 +34,7 @@
                                 }
 
                                         
-                                ?>
+                                ?></fieldset>
                    
             	</div>
 

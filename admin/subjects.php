@@ -12,7 +12,9 @@
           </div><!--/.well -->
         </div><!--/span-->
         
-               <div class="span5">
+               <div class="span9">
+                <fieldset>
+    <legend>Subjects</legend>
                <?php
                         $rSubjects=@mysql_query("select * from subjects");
                                         
@@ -30,14 +32,14 @@
                                 echo "<tr>";
                                 echo "<td>$row[0]</td>";
                                 echo "<td>$row[1]</td>";
-                               	echo "<td><a class='btn' href='editsubjects.php?id=$row[0]'><i class='icon-edit'></i></button></a><a class='btn' href='process=?id=$row[0]'><i class='icon-remove'></i></a></td>";
+                               	echo "<td><a class='btn' href='editsubjects.php?id=$row[0]'><i class='icon-edit'></i></button></a><a class='btn' href='deletesubjects.php?id=$row[0]'><i class='icon-remove'></i></a></td>";
                                 echo "</tr>";
                                 $i++;
                         }
                                         echo "</table>";
 
         ?>
-               
+               </fieldset>
                    
             	</div>
 
