@@ -12,7 +12,10 @@
           </div><!--/.well -->
         </div><!--/span-->
         
-                <div class="span5">
+                <div class="span9">
+                <fieldset>
+    <legend>Users</legend>
+    
                 <?php
                         $rUsers=@mysql_query("select * from users");
                                         
@@ -40,7 +43,7 @@
 
         ?>
                
-               
+               </fieldset>
                    
             	</div>
 

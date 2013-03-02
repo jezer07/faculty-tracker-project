@@ -12,7 +12,9 @@
           </div><!--/.well -->
         </div><!--/span-->
         
-                <div class="span5">
+                <div class="span9">
+                <fieldset>
+    <legend>Edit Users</legend>
                 <?php
                  
                                 $id=$_GET['id'];
@@ -33,7 +35,7 @@
                                 }
 
                                         
-                                ?>
+                                ?></fieldset>
             	</div>
 
         <!-- /container -->

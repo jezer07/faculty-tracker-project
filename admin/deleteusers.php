@@ -23,7 +23,7 @@
 				{
 				$query = "Delete from users WHERE id='$id'";
 				mysql_query($query);
-				echo "<center><h2>Record has been deleted...</h2></center>";
+				echo "<div class='alert alert-success'><button type='button' class='close data-dismiss='alert>&times;</button><h4>Success!</h4>Your request has been carried out without a hitch!</div>";
 				}
 				?>
             	</div>

@@ -12,7 +12,9 @@
           </div><!--/.well -->
         </div><!--/span-->
         
-                <div class="span4">
+                <div class="span9">
+                <fieldset>
+    <legend>Sections</legend>
               <?php
                         $rSections=@mysql_query("select * from sections");
                                         
@@ -28,7 +30,7 @@
                                         
                                 echo "<tr>";
                                 echo "<td>$row[0]</td>";
-                               echo "<td><a class='btn' href='editsections.php?id=$row[0]'><i class='icon-edit'></i></button></a><a class='btn' href='process=?id=$row[0]'><i class='icon-remove'></i></a></td>";
+                               echo "<td><a class='btn' href='editsections.php?id=$row[0]'><i class='icon-edit'></i></button></a><a class='btn' href='deletesections.php?id=$row[0]'><i class='icon-remove'></i></a></td>";
 							   echo "</tr>";
                                 $i++;
                         }
@@ -36,7 +38,7 @@
 
         ?>
                
-                   
+                   </fieldset>
             	</div>
 
         <!-- /container -->

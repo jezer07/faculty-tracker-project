@@ -12,7 +12,9 @@
           </div><!--/.well -->
         </div><!--/span-->
         
-                <div class="span5">
+               <div class="span9">
+                <fieldset>
+    <legend>Faculty</legend>
                <?php
                         $rFaculty=@mysql_query("select * from faculties");
                                         
@@ -41,7 +43,7 @@
                                         echo "</table>";
 
         ?>
-                   
+          </fieldset>         
             	</div>
 
 

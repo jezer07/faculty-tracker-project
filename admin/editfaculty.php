@@ -12,7 +12,9 @@
           </div><!--/.well -->
         </div><!--/span-->
         
-                <div class="span5">
+                 <div class="span9">
+                <fieldset>
+    <legend>Edit Faculty</legend>
                
                <?php
                //edit faculty  
@@ -34,7 +36,7 @@
 
                                         
                                 ?>
-                   
+                   </fieldset>
             	</div>
 
 

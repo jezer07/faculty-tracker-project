@@ -12,7 +12,9 @@
           </div><!--/.well -->
         </div><!--/span-->
         
-                       <div class="span5">
+                       <div class="span9">
+                <fieldset>
+    <legend>Add Subjects</legend>
                             <form method="post" class="form-horizontal">
                             <h2>Add Subjects</h2><br/><br/><br/>
               <div class="control-group">
@@ -49,7 +51,7 @@
 						
 						mysql_close();
 						}
-						?>    
+						?>    </fieldset>
         </div>
 
         <!-- /container -->

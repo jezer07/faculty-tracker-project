@@ -28,7 +28,7 @@
                                         {
                                         $query = "Update faculties set id='$id', name='$name', contactno='$num', email='$email' WHERE id='$id'";
                                         mysql_query($query);
-                                        echo "<h2>Record has been updated...</h2>";
+                                        echo "<div class='alert alert-success'><button type='button' class='close data-dismiss='alert>&times;</button><h4>Success!</h4>Your request has been carried out without a hitch!</div>";
                                         }
                 ?>
                
