@@ -16,7 +16,7 @@
                 <fieldset>
     <legend>Add Rooms</legend>
                             <form method="post" class="form-horizontal">
-                            <h2>Add Rooms</h2><br/><br/><br/>
+              
               <div class="control-group">
                 <label class="control-label">Room: </label>
                 <div class="controls">
@@ -50,7 +50,7 @@
 						$query = "Insert into rooms values ('$room','$type')";
 						$result = @mysql_query($query);
 						
-						echo "<h1>Room Added</h1>";
+						echo "<div class='alert alert-success'><button type='button' class='close data-dismiss='alert>&times;</button><h4>Success!</h4>Your request has been carried out without a hitch!</div>";
 						
 						mysql_close();
 						}

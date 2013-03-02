@@ -16,7 +16,7 @@
                 <fieldset>
     <legend>Add Subjects</legend>
                             <form method="post" class="form-horizontal">
-                            <h2>Add Subjects</h2><br/><br/><br/>
+                            
               <div class="control-group">
                 <label class="control-label">Subject Code: </label>
                 <div class="controls">
@@ -47,7 +47,7 @@
 						$query = "Insert into subjects values ('$code','$desc')";
 						$result = @mysql_query($query);
 						
-						echo "<h1>Subjects Added</h1>";
+						echo "<div class='alert alert-success'><button type='button' class='close data-dismiss='alert>&times;</button><h4>Success!</h4>Your request has been carried out without a hitch!</div>";
 						
 						mysql_close();
 						}

@@ -16,7 +16,7 @@
                 <fieldset>
     <legend>Add Faculty</legend>
                             <form method="post" class="form-horizontal">
-                            <h2>Add Faculty</h2><br/><br/><br/>
+                            
                       <div class="control-group">
                         <label class="control-label">Faculty ID: </label>
                         <div class="controls">
@@ -86,8 +86,7 @@
 						$query = "Insert into faculties values ('$id','$name','$contact','$email','$rr', NOW())";
 						$result = @mysql_query($query);
 						
-						echo "<h1>Faculty Added</h1>";
-						echo $query;
+						echo "<div class='alert alert-success'><button type='button' class='close data-dismiss='alert>&times;</button><h4>Success!</h4>Your request has been carried out without a hitch!</div>";
 						mysql_close();
 						}
 						?>    </fieldset>

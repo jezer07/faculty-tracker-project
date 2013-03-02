@@ -16,8 +16,7 @@
                 <fieldset>
     <legend>Add Sections</legend>
                           <form method="post" class="form-horizontal">
-                            <h2>Add Sections</h2><br/><br/><br/>
-              <div class="control-group">
+                           <div class="control-group">
                 <label class="control-label">Section: </label>
                 <div class="controls">
                   <input type="text" name="section" class="span2" placeholder="Section">
@@ -40,7 +39,7 @@
 						$query = "Insert into sections values ('$section')";
 						$result = @mysql_query($query);
 						
-						echo "<h1>Section Added</h1>";
+						echo "<div class='alert alert-success'><button type='button' class='close data-dismiss='alert>&times;</button><h4>Success!</h4>Your request has been carried out without a hitch!</div>";
 						
 						mysql_close();
 						}
