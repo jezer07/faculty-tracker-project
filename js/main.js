@@ -5,6 +5,9 @@ $(document).ready(function(){
  
 	//	$('#search').typeahead({source: colors});
 		
-
+$(".combosubmit").change(function(){
+		$(".comboform").submit();
+	
+		});
 
 	});
