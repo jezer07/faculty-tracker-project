@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 02, 2013 at 04:20 PM
+-- Generation Time: Mar 02, 2013 at 07:51 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `schedules` (
   `start` time DEFAULT NULL,
   `end` time DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `schedules`
@@ -117,7 +117,9 @@ INSERT INTO `schedules` (`id`, `subjectid`, `sectionid`, `facultyid`, `room`, `d
 (5, 'CSC15', '301I', '1000001', 'H301', 'W', '07:00:00', '08:30:00'),
 (6, 'ITC12', '302I', '1000002', 'H302', 'TH', '07:00:00', '08:30:00'),
 (7, 'ITC15', '303I', '1000003', 'H311', 'W', '09:00:00', '10:30:00'),
-(8, 'ITC16', '304I', '1000004', 'H312', 'TH', '09:00:00', '10:30:00');
+(8, 'ITC16', '304I', '1000004', 'H312', 'TH', '09:00:00', '10:30:00'),
+(9, 'CSC15', '301I', '1000001', 'H301', 'M', '08:30:00', '10:00:00'),
+(10, 'CSC15', '301I', '1000001', 'H301', 'W', '08:30:00', '10:00:00');
 
 -- --------------------------------------------------------
 

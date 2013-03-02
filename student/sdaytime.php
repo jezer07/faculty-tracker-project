@@ -79,27 +79,30 @@
 </div>
 <div class='modal-body'>";
 
-	$qDaySched = "SELECT subjectid,sectionid,concat(DATE_FORMAT(start,'%k:%i'),'-',DATE_FORMAT(end,'%k:%i')) as time  FROM faculties JOIN schedules on faculties.id=schedules.facultyid where faculties.id='$row[id]' AND day='$_GET[day]'";
+	$qDaySched = "SELECT subjectid,sectionid,concat(DATE_FORMAT(start,'%k:%i'),'-',DATE_FORMAT(end,'%k:%i')) as time,room FROM faculties JOIN schedules on faculties.id=schedules.facultyid where faculties.id='$row[id]' AND day='$_GET[day]'";
 	$eDaySched = mysql_query($qDaySched);
 	
 echo "
-<table class='table'>
+<table class='table table-striped'>
 	<thead>
 	<tr>
 		<th>#</th>
 		<th>Subject</th>
 		<th>Section</th>
+		<th>Room</th>
 		<th>Time</th>
 	</tr>
 	</thead>
 	<tbody>
 ";
-while($row2 = mysql_fetch_assoc($eDaySched)){
 $ctr=1;
+while($row2 = mysql_fetch_assoc($eDaySched)){
+
 echo "<tr>
 		<td>$ctr</td>
 		<td>$row2[subjectid]</td>
 		<td>$row2[sectionid]</td>
+		<td>$row2[room]</td>
 		<td>$row2[time]</td>
 
 	</tr>";
