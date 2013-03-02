@@ -1,9 +1,8 @@
-        <?php include("header.php");?>
         
-             <script>
+		
+		<?php include("header.php");?>
+        
             
-             
-             </script>
              
                 <div class="span9">
           		
@@ -27,7 +26,15 @@
             </thead>
             <tbody>
             	<tr>
-                	<td>ITC30-304i<br/>7:30-8:30<br/>H-410></td>
+                	<td>ITC30-304i<br/>7:30-8:30<br/>H-410</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                </tr>
+                
+                 	<tr>
+                	<td>ITC30-304i<br/>7:30-8:30<br/>H-410</td>
                     <td>a</td>
                     <td>a</td>
                     <td>a</td>
@@ -49,11 +56,10 @@
 
         <!-- /container -->
      <?php include("footer.php");?>
-	   <script>
+	  <script>
             $(document).ready(function(){
-				
-				$("#sname").attr("class","active");
-					
+				$("#sroom").attr("class","active");
+			
 				});
              
              </script>

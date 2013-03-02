@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 3.4.5
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 02, 2013 at 01:44 PM
--- Server version: 5.5.8
--- PHP Version: 5.3.5
+-- Generation Time: Mar 02, 2013 at 02:27 PM
+-- Server version: 5.5.16
+-- PHP Version: 5.3.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -41,8 +42,8 @@ CREATE TABLE IF NOT EXISTS `faculties` (
 --
 
 INSERT INTO `faculties` (`id`, `name`, `contactno`, `email`, `userid`, `createdAt`) VALUES
-('1000001', 'Amparo Vallestero', '09123456789', 'amparo,vallestero@yahoo.com', NULL, NULL),
-('1000002', 'Daniel Dazig Jr', '09447890123', 'daniel.dazigjr@gmail.com', NULL, NULL),
+('1000001', 'Amparo Vallestero', '09123456789', 'amparo.vallestero@yahoo.com', NULL, NULL),
+('1000002', 'Daniel Dasig Jr', '09447890123', 'daniel.dazigjr@gmail.com', NULL, NULL),
 ('1000003', 'Brandon Sibbaluca', '09234563987', 'brandon.sibbaluca@gmail.com', NULL, NULL),
 ('1000004', 'Mengvi Gatpandan', '09346547890', 'menvgi.gatpandan@yahoo.com', NULL, NULL),
 ('1000005', 'Fely Ordona', '09154466778', 'fely.ordona@yahoo.com', NULL, NULL),
@@ -60,6 +61,7 @@ INSERT INTO `faculties` (`id`, `name`, `contactno`, `email`, `userid`, `createdA
 
 CREATE TABLE IF NOT EXISTS `rooms` (
   `id` varchar(10) NOT NULL,
+  `Type` varchar(40) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -67,6 +69,23 @@ CREATE TABLE IF NOT EXISTS `rooms` (
 -- Dumping data for table `rooms`
 --
 
+INSERT INTO `rooms` (`id`, `Type`) VALUES
+('H301', 'Lecture Room'),
+('H302', 'Lecture Room'),
+('H311', 'Laboratory Room'),
+('H312', 'Laboratory Room'),
+('H401', 'Lecture Room'),
+('H402', 'Lecture Room'),
+('H403', 'Lecture Room'),
+('H404', 'Lecture Room'),
+('H405', 'Lecture Room'),
+('H406', 'Lecture Room'),
+('H407', 'Lecture Room'),
+('H408', 'Lecture Room'),
+('H409', 'Lecture Room'),
+('H410', 'Lecture Room'),
+('H411', 'Laboratory Room'),
+('H412', 'Laboratory Room');
 
 -- --------------------------------------------------------
 
@@ -84,12 +103,17 @@ CREATE TABLE IF NOT EXISTS `schedules` (
   `start` time DEFAULT NULL,
   `end` time DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `schedules`
 --
 
+INSERT INTO `schedules` (`id`, `subjectid`, `sectionid`, `facultyid`, `room`, `day`, `start`, `end`) VALUES
+(1, 'CSC15', '301I', '1000001', 'H301', 'M/W', '07:00:00', '08:30:00'),
+(2, 'H302', 'ITC12', '1000002', 'H302', 'T/TH', '07:00:00', '08:30:00'),
+(3, 'ITC15', 'H303I', '1000003', 'H311', 'M/W', '09:00:00', '10:30:00'),
+(4, 'ITC16', '304I', '1000004', 'H312', 'T/TH', '09:00:00', '10:30:00');
 
 -- --------------------------------------------------------
 
@@ -190,3 +214,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `type`, `createdAt`) VALUES
 --
 ALTER TABLE `faculties`
   ADD CONSTRAINT `faculties_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
