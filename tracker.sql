@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 02, 2013 at 02:27 PM
+-- Generation Time: Mar 02, 2013 at 04:20 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -103,17 +103,21 @@ CREATE TABLE IF NOT EXISTS `schedules` (
   `start` time DEFAULT NULL,
   `end` time DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `schedules`
 --
 
 INSERT INTO `schedules` (`id`, `subjectid`, `sectionid`, `facultyid`, `room`, `day`, `start`, `end`) VALUES
-(1, 'CSC15', '301I', '1000001', 'H301', 'M/W', '07:00:00', '08:30:00'),
-(2, 'H302', 'ITC12', '1000002', 'H302', 'T/TH', '07:00:00', '08:30:00'),
-(3, 'ITC15', 'H303I', '1000003', 'H311', 'M/W', '09:00:00', '10:30:00'),
-(4, 'ITC16', '304I', '1000004', 'H312', 'T/TH', '09:00:00', '10:30:00');
+(1, 'CSC15', '301I', '1000001', 'H301', 'M', '07:00:00', '08:30:00'),
+(2, 'ITC12', '302I', '1000002', 'H302', 'T', '07:00:00', '08:30:00'),
+(3, 'ITC15', '303I', '1000003', 'H311', 'M', '09:00:00', '10:30:00'),
+(4, 'ITC16', '304I', '1000004', 'H312', 'T', '09:00:00', '10:30:00'),
+(5, 'CSC15', '301I', '1000001', 'H301', 'W', '07:00:00', '08:30:00'),
+(6, 'ITC12', '302I', '1000002', 'H302', 'TH', '07:00:00', '08:30:00'),
+(7, 'ITC15', '303I', '1000003', 'H311', 'W', '09:00:00', '10:30:00'),
+(8, 'ITC16', '304I', '1000004', 'H312', 'TH', '09:00:00', '10:30:00');
 
 -- --------------------------------------------------------
 

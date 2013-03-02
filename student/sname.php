@@ -16,19 +16,34 @@
             
              
              </script>
-             
                 <div class="span9">
           		 <?php
-                 	
+                 	if(isset($_GET['name'])){
+						$getname=$_GET['name'];
+						}
+					else
+					$getname="";	
 				 ?>
                 
-                <h3>Search by Name</h3><form class="form-search">
-    <input type="text" class="input-medium search-query" data-items='4' data-provide="typeahead" data-source='<?php echo json_encode($facultyArray); ?>'>
+                <h3>Search by Name</h3><form class="form-search" method="get" action="sname.php">
+    <input type="text" value="<?php echo $getname?>" class="input-large search-query" name="name" data-provide="typeahead" autocomplete="off" data-source='<?php echo json_encode($facultyArray); ?>'>
     <button type="submit" class="btn">Search</button>
     </form>
                 <hr/>
-           <table class="table table-striped">
-           	<caption>Marry Adnn Taduyo<caption>
+                
+              <?php 
+			  if(isset($_GET["name"])){
+				 $name = $_GET["name"];
+				 
+				 $qSched = "SELECT * FROM faculties where name='$name'";
+				 $eSched = mysql_query($qSched);
+				 
+				 if(mysql_num_rows($eSched)){
+					 
+					 
+					 echo "
+					   <table class='table table-striped'>
+           	<caption>$_GET[name]<caption>
             <thead>
            		<tr>
             		<th>Monday</th>
@@ -38,20 +53,58 @@
                     <th>Friday</th>
                     	
            	   </tr>
-            </thead>
-            <tbody>
-            	<tr>
-                	<td>ITC30-304i<br/>7:30-8:30<br/>H-410></td>
-                    <td>a</td>
-                    <td>a</td>
-                    <td>a</td>
-                    <td>a</td>
-                </tr>
-            
-            </tbody>
-            
-           
-           </table>     
+            </thead>";
+			echo "<tbody>
+				  <tr>
+			";
+			$days= array("M","T","W","TH","F");
+					 for($i=0;$i<count($days);$i++){
+						$qSched = "SELECT name,sectionid,subjectid,room,day,DATE_FORMAT(start,'%k:%i') as start,DATE_FORMAT(end,'%k:%i')as end FROM faculties JOIN schedules ON 		faculties.id = schedules.facultyid WHERE faculties.name = '$name' AND day = '$days[$i]' order by start,end asc";
+						
+						$eSched = mysql_query($qSched) or die(mysql_error());
+					
+						if(!mysql_num_rows($eSched)){
+							echo "<td></td>";
+							
+							}
+							else{
+					
+						while($row = mysql_fetch_assoc($eSched)){
+							echo "<td>";
+							echo "<strong>$row[subjectid]-$row[sectionid]</strong><br/>
+								  <small>$row[start]-$row[end]<br/>
+								  $row[room]</small>
+							";
+							echo "</td>";
+							
+							}//while
+						
+						
+							}
+						 }// for loop
+					 
+          			 echo "</tr>";
+		   
+		   
+		   echo "
+		   
+		   </tbody>
+		   </table>";
+					 }
+					 else{
+						 echo "
+						     <div class='alert alert-error'>
+							There are no faculty with that name.
+							</div>
+						 
+						 ";
+						 
+						 }
+				 
+				  }
+			  
+			  ?>  
+         
            
           			
                     

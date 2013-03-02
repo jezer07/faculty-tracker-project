@@ -7,9 +7,16 @@
                 <div class="span9">
           		
                 
-                <h3>Search by Name</h3><form class="form-search">
-    <input type="text" class="input-medium search-query">
-    <button type="submit" class="btn">Search</button>
+                <h3>Search by Day Time</h3><form class="form-search">
+   				<select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        </select>
+   	
+   
     </form>
                 <hr/>
            <table class="table table-striped">
