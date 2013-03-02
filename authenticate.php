@@ -8,9 +8,10 @@ $qUser = "SELECT * FROM users where username='$username' AND password=SHA('$pass
 
 echo $qUser;
 
-$eUser = mysql_query($qUser);
+//$eUser = mysql_query($qUser);
 
 echo $eUser;
+echo $qUser;
 
 if(mysql_num_rows($eUser)==1){
 	$getType = mysql_result($eUser,0,3);

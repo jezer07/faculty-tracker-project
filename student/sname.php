@@ -1,4 +1,16 @@
-        <?php include("header.php");?>
+        <?php include("header.php");
+		
+		
+		//get all faculties
+		$qFaculties = "SELECT name FROM faculties";
+		$eFaculties = mysql_query($qFaculties) or die(mysql_error());
+		$facultyArray= array();
+		while($row = mysql_fetch_array($eFaculties)){
+			array_push($facultyArray,$row[0]);
+			}		
+		
+		
+		?>
         
              <script>
             
@@ -6,10 +18,12 @@
              </script>
              
                 <div class="span9">
-          		
+          		 <?php
+                 	
+				 ?>
                 
                 <h3>Search by Name</h3><form class="form-search">
-    <input type="text" class="input-medium search-query">
+    <input type="text" class="input-medium search-query" data-items='4' data-provide="typeahead" data-source='<?php echo json_encode($facultyArray); ?>'>
     <button type="submit" class="btn">Search</button>
     </form>
                 <hr/>
