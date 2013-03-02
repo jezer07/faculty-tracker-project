@@ -49,7 +49,7 @@
 </div>
 <div class='modal-body'>";
 
-$qDaySched = "SELECT subjectid,sectionid,concat(DATE_FORMAT(start,'%k:%i'),'-',DATE_FORMAT(end,'%k:%i')) as time,room FROM faculties JOIN schedules on faculties.id=schedules.facultyid where faculties.id='$row[id]' AND room='$_GET[room]'";
+$qDaySched = "SELECT subjectid,sectionid,day,concat(DATE_FORMAT(start,'%k:%i'),'-',DATE_FORMAT(end,'%k:%i')) as time,room FROM faculties JOIN schedules on faculties.id=schedules.facultyid where faculties.id='$row[id]' AND room='$_GET[room]'";
 	$eDaySched = mysql_query($qDaySched);
 	
 echo "
@@ -59,6 +59,7 @@ echo "
 		<th>#</th>
 		<th>Subject</th>
 		<th>Section</th>
+		<th>Day</th>
 		<th>Time</th>
 	</tr>
 	</thead>
@@ -71,6 +72,7 @@ echo "<tr>
 		<td>$ctr</td>
 		<td>$row2[subjectid]</td>
 		<td>$row2[sectionid]</td>
+		<td>$row2[day]</td>
 		<td>$row2[time]</td>
 
 	</tr>";
