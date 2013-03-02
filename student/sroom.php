@@ -6,45 +6,34 @@
              
                 <div class="span9">
           		
+                <?php $rooms = mysql_query("SELECT * FROM rooms");
+				
+				?>
                 
-                <h3>Search by Name</h3><form class="form-search">
-    <input type="text" class="input-medium search-query">
-    <button type="submit" class="btn">Search</button>
-    </form>
+                <h3>Search by room</h3><form class="form-search comboform">
+					<select class='combosubmit' name="room">
+                    <option>- select room - </option>
+                 	<?php 
+					while($row = mysql_fetch_assoc($rooms)){
+						echo "<option value= $row[id]> $row[id]</option>";
+						
+						}	
+					
+					?>   
+                    
+                    
+                    </select>
+    			
+    			</form>
                 <hr/>
-           <table class="table table-striped">
-           	<caption>Marry Adnn Taduyo<caption>
-            <thead>
-           		<tr>
-            		<th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                    	
-           	   </tr>
-            </thead>
-            <tbody>
-            	<tr>
-                	<td>ITC30-304i<br/>7:30-8:30<br/>H-410</td>
-                    <td>a</td>
-                    <td>a</td>
-                    <td>a</td>
-                    <td>a</td>
-                </tr>
-                
-                 	<tr>
-                	<td>ITC30-304i<br/>7:30-8:30<br/>H-410</td>
-                    <td>a</td>
-                    <td>a</td>
-                    <td>a</td>
-                    <td>a</td>
-                </tr>
-            
-            </tbody>
+           
             
            
-           </table>     
+          <?php 
+		  
+		  
+		  
+		  ?>
            
           			
                     
