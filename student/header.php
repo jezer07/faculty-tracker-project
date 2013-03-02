@@ -72,9 +72,9 @@ require '../mysql_connect.php';
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Search By</li>
-              <li id="sname"><a href="sname.php"><i class=" icon-plus-sign"></i>Faculty name</a></li>
-              <li id="sdaytime"><a href="sdaytime.php"><i class="icon-eye-open"></i>Day time</a></li>
-              <li id="sroom"><a href="sroom.php"><i class="icon-eye-open"></i>Room</a></li>
+              <li id="sname"><a href="sname.php"><i class="icon-user"></i>Faculty name</a></li>
+              <li id="sdaytime"><a href="sdaytime.php"><i class="icon-time"></i>Day time</a></li>
+              <li id="sroom"><a href="sroom.php"><i class="icon-home"></i>Room</a></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->

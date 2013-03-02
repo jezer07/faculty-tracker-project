@@ -26,7 +26,7 @@
 				 ?>
                 
                 <h3>Search by Name</h3><form class="form-search" method="get" action="sname.php">
-    <input type="text" value="<?php echo $getname?>" class="input-large search-query" name="name" data-provide="typeahead" autocomplete="off" data-source='<?php echo json_encode($facultyArray); ?>'>
+    <input type="text" id="searchname" value="<?php echo $getname?>" class="input-large search-query" name="name" data-provide="typeahead" autocomplete="off" data-source='<?php echo json_encode($facultyArray); ?>'>
     <button type="submit" class="btn">Search</button>
     </form>
                 <hr/>

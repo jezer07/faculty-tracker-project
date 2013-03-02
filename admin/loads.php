@@ -12,38 +12,32 @@
           </div><!--/.well -->
         </div><!--/span-->
         
-               <div class="span5">
-                <?php
-                        $rFaculty=@mysql_query("select * from faculties");
-                                        
-                                $i=1;
-                                echo "<table class='table' border='1'>";
-                                echo "<tr>";
-                                echo "<td>Faculty ID </td>";
-                                echo "<td>Name </td>";
-                                echo "<td>Contact No</td>";
-								echo "<td>Email</td>";
-								echo "<td>Action</td>";
-                                echo "</tr>";
-                                        
-                                while($row=mysql_fetch_array($rFaculty))
-                                {
-                                        
-                                echo "<tr>";
-                                echo "<td>$row[0]</td>";
-                                echo "<td>$row[1]</td>";
-								echo "<td>$row[2]</td>";
-                                echo "<td>$row[3]</td>";
-								echo "<td><a class='btn' href='editloads.php?id=$row[0]'><i class='icon-edit'></i></button></a><a class='btn' href='deleteloads.php?id=$row[0]'><i class='icon-remove'></i></a></td>";
-								echo "</tr>";
-                                $i++;
-                        }
-                                        echo "</table>";
-
-        ?>
-                   
+       
+               <div class="span9">
+                <fieldset>
+        <legend>Loads</h2></legend>
+                      <form class="form-horizontal">
+    <div class="control-group">
+    <label class="control-label" for="inputEmail">Email</label>
+    <div class="controls">
+    <input type="text" id="inputEmail" placeholder="Email">
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label" for="inputPassword">Password</label>
+    <div class="controls">
+    <input type="password" id="inputPassword" placeholder="Password">
+    </div>
+    </div>
+    <div class="control-group">
+    <div class="controls">
+   
+    <button type="submit" class="btn">Sign in</button>
+    </div>
+    </div>
+    
+    </form>
+    </fieldset>
             	</div>
-
-
         <!-- /container -->
      <?php include("footer.php");?>
