@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 02, 2013 at 12:39 PM
+-- Generation Time: Mar 02, 2013 at 01:01 PM
 -- Server version: 5.5.16
--- PHP Version: 5.3.8 jgjhg
+-- PHP Version: 5.3.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -139,11 +139,19 @@ CREATE TABLE IF NOT EXISTS `subjects` (
 INSERT INTO `subjects` (`id`, `subjectdesc`) VALUES
 ('CSC 15', 'INTRO INFO TECH'),
 ('ITC 12', 'IBM TRACK MOD2'),
+('ITC 15', 'IBM TRACK MOD3'),
 ('ITC 16', 'DISCRETE STRUC'),
 ('ITC 18', 'ADV PROGRAMING'),
+('ITC 21', 'ADV DB MGT'),
+('ITC 22', 'DATABASE MGT'),
+('ITC 23', 'IT ELEC 2'),
 ('ITC 25', 'INTRO TO PROG'),
+('ITC 30', 'IBM TRACK MOD4'),
 ('ITC 33', 'OOP 1'),
-('ITC 39', 'COMP SYS ORG');
+('ITC 38', 'Network Mgt'),
+('ITC 39', 'COMP SYS ORG'),
+('ITC 51', 'SYS ANAL DESGN1'),
+('ITC 56', 'IT PROF ETHICS');
 
 -- --------------------------------------------------------
 
@@ -168,7 +176,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `type`, `createdAt`) VALUES
 (1, 'admin', 'd033e22ae348aeb5660f', 'admin', '2013-03-02 19:29:56'),
 (2, 'operator', 'fe96dd39756ac41b7428', 'operator', '2013-03-02 19:29:56'),
 (3, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin', '2013-03-02 19:31:59'),
-(4, 'operator', 'fe96dd39756ac41b74283a9292652d366d73931f', NULL, '2013-03-02 19:31:59'),
+(4, '11-234276', '79fa8cdf12a73e3c60778cc43aabec63817c5f90', 'student', '2013-03-02 20:00:01'),
 (5, '1000001', 'f1720daf89ee3de12e77dd69c70852839e12714f', 'faculty', '2013-03-02 19:33:24'),
 (6, '1000002', '6fb4f7fc86976a2579632bd9896e8c17e077c1ed', 'faculty', '2013-03-02 19:33:24'),
 (7, '1000003', 'b4ab3657d24f045fb9c9fdb70d635024a1be32ef', 'faculty', '2013-03-02 19:34:23'),
