@@ -22,12 +22,24 @@
                  	
 				 ?>
                 
-                <h3>Search by Name</h3><form class="form-search">
-    <input type="text" class="input-medium search-query" data-items='4' data-provide="typeahead" data-source='<?php echo json_encode($facultyArray); ?>'>
+                <h3>Search by Name</h3><form class="form-search" method="get" action="sname.php">
+    <input type="text" class="input-medium search-query" name="name" data-provide="typeahead" data-source='<?php echo json_encode($facultyArray); ?>'>
     <button type="submit" class="btn">Search</button>
     </form>
                 <hr/>
-           <table class="table table-striped">
+                
+              <?php 
+			  if(isset($_GET["name"])){
+				 $name = $_GET["name"];
+				 
+				 $qSched = "SELECT * FROM faculties where name='$name'";
+				 $eSched = mysql_query($qSched);
+				 
+				 if(mysql_num_rows($eSched)){
+					 
+					 
+					 echo "
+					   <table class='table table-striped'>
            	<caption>Marry Adnn Taduyo<caption>
             <thead>
            		<tr>
@@ -38,20 +50,49 @@
                     <th>Friday</th>
                     	
            	   </tr>
-            </thead>
-            <tbody>
-            	<tr>
-                	<td>ITC30-304i<br/>7:30-8:30<br/>H-410></td>
-                    <td>a</td>
-                    <td>a</td>
-                    <td>a</td>
-                    <td>a</td>
-                </tr>
-            
-            </tbody>
-            
-           
-           </table>     
+            </thead>";
+			echo "<tbody>
+				  <tr>
+			";
+			$days= array("M","T","W","TH","F");
+					 for($i=0;$i<count($days);$i++){
+						$qSched = "SELECT name,sectionid,subjectid,room,day,start,end FROM faculties JOIN schedules ON 		faculties.id = schedules.facultyid WHERE faculties.name = '$name' AND day = '$days[$i]'";
+						$eSched = mysql_query($qSched) or die(mysql_error());
+						while($row = mysql_fetch_array($eSched)){
+							
+							echo "
+							<td>
+							
+							
+							</td>"	
+							
+							}//while
+						
+						
+						 
+						 }// for loop
+					 
+          			 echo "</tr>"
+		   
+		   
+		   echo "
+		   </tbody>
+		   </table>";
+					 }
+					 else{
+						 echo "
+						     <div class='alert alert-error'>
+							There are no faculty with that name.
+							</div>
+						 
+						 ";
+						 
+						 }
+				 
+				  }
+			  
+			  ?>  
+         
            
           			
                     
