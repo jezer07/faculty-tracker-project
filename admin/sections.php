@@ -12,29 +12,31 @@
           </div><!--/.well -->
         </div><!--/span-->
         
-                <div class="span9">
+                <div class="span8">
                 <fieldset>
     <legend>Sections</legend>
               <?php
                         $rSections=@mysql_query("select * from sections");
                                         
                                 $i=1;
-                                echo "<table class='table' border='1'>";
-                                echo "<tr>";
-                                echo "<td>Subjects </td>";
-                               	echo "<td>Action</td>";
-                                echo "</tr>";
+                                echo "<table class='table table-bordered' id='dt'>";
+                                echo "<thead><tr>";
+                                echo "<th width='99'>Section Code</th>";
+                               	echo "<th width='99'>Action</th>";
+                                echo "</tr></thead>
+								<tbody>
+								";
                                         
                                 while($row=mysql_fetch_array($rSections))
                                 {
                                         
                                 echo "<tr>";
                                 echo "<td>$row[0]</td>";
-                               echo "<td><a class='btn' href='editsections.php?id=$row[0]'><i class='icon-edit'></i></button></a><a class='btn' href='deletesections.php?id=$row[0]'><i class='icon-remove'></i></a></td>";
+                               echo "<td><a class='btn' href='editsections.php?id=$row[0]' title='Edit'><i class='icon-edit'></i></button></a><a class='btn' href='deletesections.php?id=$row[0]'><i class='icon-remove'></i></a></td>";
 							   echo "</tr>";
                                 $i++;
                         }
-                                        echo "</table>";
+                                        echo "</tbody></table>";
 
         ?>
                
