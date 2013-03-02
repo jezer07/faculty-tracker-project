@@ -16,14 +16,17 @@
             
              
              </script>
-             
                 <div class="span9">
           		 <?php
-                 	
+                 	if(isset($_GET['name'])){
+						$getname=$_GET['name'];
+						}
+					else
+					$getname="";	
 				 ?>
                 
                 <h3>Search by Name</h3><form class="form-search" method="get" action="sname.php">
-    <input type="text" class="input-medium search-query" name="name" data-provide="typeahead" data-source='<?php echo json_encode($facultyArray); ?>'>
+    <input type="text" value="<?php echo $getname?>" class="input-large search-query" name="name" data-provide="typeahead" autocomplete="off" data-source='<?php echo json_encode($facultyArray); ?>'>
     <button type="submit" class="btn">Search</button>
     </form>
                 <hr/>
@@ -40,7 +43,7 @@
 					 
 					 echo "
 					   <table class='table table-striped'>
-           	<caption>Marry Adnn Taduyo<caption>
+           	<caption>$_GET[name]<caption>
             <thead>
            		<tr>
             		<th>Monday</th>
@@ -56,26 +59,35 @@
 			";
 			$days= array("M","T","W","TH","F");
 					 for($i=0;$i<count($days);$i++){
-						$qSched = "SELECT name,sectionid,subjectid,room,day,start,end FROM faculties JOIN schedules ON 		faculties.id = schedules.facultyid WHERE faculties.name = '$name' AND day = '$days[$i]'";
+						$qSched = "SELECT name,sectionid,subjectid,room,day,DATE_FORMAT(start,'%k:%i') as start,DATE_FORMAT(end,'%k:%i')as end FROM faculties JOIN schedules ON 		faculties.id = schedules.facultyid WHERE faculties.name = '$name' AND day = '$days[$i]' order by start,end asc";
+						
 						$eSched = mysql_query($qSched) or die(mysql_error());
-						while($row = mysql_fetch_array($eSched)){
+					
+						if(!mysql_num_rows($eSched)){
+							echo "<td></td>";
 							
-							echo "
-							<td>
-							
-							
-							</td>"	
+							}
+							else{
+					
+						while($row = mysql_fetch_assoc($eSched)){
+							echo "<td>";
+							echo "<strong>$row[subjectid]-$row[sectionid]</strong><br/>
+								  <small>$row[start]-$row[end]<br/>
+								  $row[room]</small>
+							";
+							echo "</td>";
 							
 							}//while
-						s
 						
-						 
+						
+							}
 						 }// for loop
 					 
-          			 echo "</tr>"
+          			 echo "</tr>";
 		   
 		   
 		   echo "
+		   
 		   </tbody>
 		   </table>";
 					 }
