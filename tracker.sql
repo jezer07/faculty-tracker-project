@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 02, 2013 at 02:17 PM
+-- Generation Time: Mar 02, 2013 at 02:27 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -61,6 +61,7 @@ INSERT INTO `faculties` (`id`, `name`, `contactno`, `email`, `userid`, `createdA
 
 CREATE TABLE IF NOT EXISTS `rooms` (
   `id` varchar(10) NOT NULL,
+  `Type` varchar(40) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -68,23 +69,23 @@ CREATE TABLE IF NOT EXISTS `rooms` (
 -- Dumping data for table `rooms`
 --
 
-INSERT INTO `rooms` (`id`) VALUES
-('H12'),
-('H301'),
-('H302'),
-('H311'),
-('H312'),
-('H401'),
-('H402'),
-('H403'),
-('H404'),
-('H405'),
-('H406'),
-('H407'),
-('H408'),
-('H409'),
-('H410'),
-('H411');
+INSERT INTO `rooms` (`id`, `Type`) VALUES
+('H301', 'Lecture Room'),
+('H302', 'Lecture Room'),
+('H311', 'Laboratory Room'),
+('H312', 'Laboratory Room'),
+('H401', 'Lecture Room'),
+('H402', 'Lecture Room'),
+('H403', 'Lecture Room'),
+('H404', 'Lecture Room'),
+('H405', 'Lecture Room'),
+('H406', 'Lecture Room'),
+('H407', 'Lecture Room'),
+('H408', 'Lecture Room'),
+('H409', 'Lecture Room'),
+('H410', 'Lecture Room'),
+('H411', 'Laboratory Room'),
+('H412', 'Laboratory Room');
 
 -- --------------------------------------------------------
 
