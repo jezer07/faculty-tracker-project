@@ -4,8 +4,7 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Actions</li>
-              <li><a href="addloads.php"><i class=" icon-plus-sign"></i>Add Loads</a></li>
-              <li class="active"><a href="loads.php"><i class="icon-eye-open"></i>View Loads</a></li>
+              <li class="active"><a href="loads.php"><i class="icon-eye-open"></i> Loads</a></li>
 
              
             </ul>
@@ -18,21 +17,160 @@
         <legend>Loads</h2></legend>
                       <form class="form-horizontal">
     <div class="control-group">
-    <label class="control-label" for="inputEmail">Email</label>
+    <label class="control-label">Faculty</label>
     <div class="controls">
-    <input type="text" id="inputEmail" placeholder="Email">
+    <select >
+    <?php $rfaculty=@mysql_query("select * from faculties");
+	 $i=1;
+            
+              while($row=mysql_fetch_array($rfaculty))
+              {             
+               echo "<option value='$row[0]'>$row[1]</option>";
+               $i++;
+                 }
+	?>
+    </select>
     </div>
     </div>
     <div class="control-group">
-    <label class="control-label" for="inputPassword">Password</label>
+    <label class="control-label">Subject Code</label>
     <div class="controls">
-    <input type="password" id="inputPassword" placeholder="Password">
+    <select>
+    <?php $rsubjects=@mysql_query("select * from subjects");
+	 $i=1;
+            
+              while($row=mysql_fetch_array($rsubjects))
+              {             
+               echo "<option value='$row[0]'>$row[0]</option>";
+               $i++;
+                 }
+	?>
+    </select>
     </div>
     </div>
+    <div class="control-group">
+    <label class="control-label">Section</label>
+    <div class="controls">
+    <select>
+    <?php $rsections=@mysql_query("select * from sections");
+	 $i=1;
+            
+              while($row=mysql_fetch_array($rsections))
+              {             
+               echo "<option value='$row[0]'>$row[0]</option>";
+               $i++;
+                 }
+	?>
+    </select>
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label">Room</label>
+    <div class="controls">
+    <select>
+    <?php $rroom=@mysql_query("select * from rooms");
+	 $i=1;
+            
+              while($row=mysql_fetch_array($rroom))
+              {             
+               echo "<option value='$row[0]>$row[0]</option>";
+               $i++;
+                 }
+	?>
+    </select>
+    </div>
+    </div>
+   
+    <div class="control-group">
+    <label class="control-label">Day</label>
+    <div class="controls">
+    <select>
+    <option>Monday</option>
+    <option>Tuesday</option>
+    <option>Wednesday</option>
+    <option>Thursday</option>
+    <option>Friday</option>
+    </select>
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label">Start</label>
+    <div class="controls">
+    <select>
+        <option>7:00</option>
+    <option>7:30</option>
+    <option>8:00</option>
+    <option>8:30</option>
+    <option>9:00</option>
+    <option>9:30</option>
+    <option>10:00</option>
+    <option>10:30</option>
+    <option>11:00</option>
+    <option>11:30</option>
+    <option>12:00</option>
+    <option>12:30</option>
+    <option>13:00</option>
+    <option>13:30</option>
+    <option>14:00</option>
+    <option>14:30</option>
+    <option>15:00</option>
+    <option>15:30</option>
+    <option>16:00</option>
+    <option>16:30</option>
+    <option>17:00</option>
+    <option>17:30</option>
+    <option>18:00</option>
+    <option>18:30</option>
+    <option>19:00</option>
+    <option>19:30</option>
+    <option>20:00</option>
+    <option>20:30</option>
+    </select>	
+    
+    </select>
+    </div>
+    </div>
+    
+    <div class="control-group">
+    <label class="control-label">End</label>
+    <div class="controls">
+    <select>
+    <option>7:30</option>
+    <option>8:00</option>
+    <option>8:30</option>
+    <option>9:00</option>
+    <option>9:30</option>
+    <option>10:00</option>
+    <option>10:30</option>
+    <option>11:00</option>
+    <option>11:30</option>
+    <option>12:00</option>
+    <option>12:30</option>
+    <option>13:00</option>
+    <option>13:30</option>
+    <option>14:00</option>
+    <option>14:30</option>
+    <option>15:00</option>
+    <option>15:30</option>
+    <option>16:00</option>
+    <option>16:30</option>
+    <option>17:00</option>
+    <option>17:30</option>
+    <option>18:00</option>
+    <option>18:30</option>
+    <option>19:00</option>
+    <option>19:30</option>
+    <option>20:00</option>
+    <option>20:30</option>
+    <option>21:00</option>
+    </select>	
+    </div>
+    </div>
+    
     <div class="control-group">
     <div class="controls">
    
-    <button type="submit" class="btn">Sign in</button>
+    <button type="submit" class="btn">Add Load</button>
     </div>
     </div>
     
