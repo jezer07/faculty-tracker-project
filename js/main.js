@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 $(".combosubmit").change(function(){
 		$(".comboform").submit();
@@ -7,6 +6,6 @@ $(".combosubmit").change(function(){
 	
 		});
 		
-	$("#dt").dataTable();
+$('#dt').dataTable();
 
 	});

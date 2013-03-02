@@ -22,6 +22,8 @@
         <link rel="stylesheet" href="../css/jquery.dataTables.css">
 
         <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        
+        
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -57,8 +59,7 @@
                                     <li><a href="#">One more separated link</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#about"></a></li>
-                            <li><a href="#contact">Contact</a></li>
+                      
                             
                         </ul>
                         <form class="navbar-form pull-right">
