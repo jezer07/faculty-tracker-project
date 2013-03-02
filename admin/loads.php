@@ -20,7 +20,9 @@
     <label class="control-label">Faculty</label>
     <div class="controls">
     <select >
-    <?php $rfaculty=@mysql_query("select * from faculties");
+    <?php 
+	////comment
+	$rfaculty=@mysql_query("select * from faculties");
 	 $i=1;
             
               while($row=mysql_fetch_array($rfaculty))
