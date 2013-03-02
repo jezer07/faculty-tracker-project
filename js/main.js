@@ -1,10 +1,10 @@
 
 $(document).ready(function(){
 
-var colors = ["red", "blue", "green", "yellow", "brown", "black"];
+//var colors = ["red", "blue", "green", "yellow", "brown", "black"];
  
-		$('#search').typeahead({source: colors});
-
+	//	$('#search').typeahead({source: colors});
+		
 
 
 	});

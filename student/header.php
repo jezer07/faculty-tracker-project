@@ -5,6 +5,9 @@ if(!isset($_SESSION["userid"])){
 	header("Location:../index.php");
 	
 	}
+	
+require '../mysql_connect.php';
+	
  ?>
 
 <!DOCTYPE html>
