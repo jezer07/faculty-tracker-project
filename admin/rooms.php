@@ -30,7 +30,7 @@
                                 echo "<tr>";
                                 echo "<td>$row[0]</td>";
                                 echo "<td>$row[1]</td>";
-								echo "<td><form action='editusers.php' method='post'><input type='hidden' name='userid' value='$row[0]'><button type='submit'><i class='icon-edit'></i></button></form><a class='btn' href='#'><i class='icon-remove'></i></a></td>";
+								echo "<td><a class='btn' href='editrooms.php?id=$row[0]'><i class='icon-edit'></i></button></a><a class='btn' href='process=?id=$row[0]'><i class='icon-remove'></i></a></td>";
                                 echo "</tr>";
                                 $i++;
                         }
