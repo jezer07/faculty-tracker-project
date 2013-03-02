@@ -6,10 +6,10 @@
              </script>
              
                 <div class="span9">
-          		
+          		 
                 
                 <h3>Search by Name</h3><form class="form-search">
-    <input type="text" class="input-medium search-query">
+    <input type="text" class="input-medium search-query" data-provide="typeahead" id="search">
     <button type="submit" class="btn">Search</button>
     </form>
                 <hr/>
