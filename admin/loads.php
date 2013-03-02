@@ -14,7 +14,7 @@
        
                <div class="span9">
                 <fieldset>
-        <legend>Loads</h2></legend>
+        <legend>Loads</legend>
                       <form class="form-horizontal">
     <div class="control-group">
     <label class="control-label">Faculty</label>
@@ -75,7 +75,7 @@
             
               while($row=mysql_fetch_array($rroom))
               {             
-               echo "<option value='$row[0]>$row[0]</option>";
+               echo "<option value='$row[0]'>$row[0]</option>";
                $i++;
                  }
 	?>
