@@ -16,15 +16,17 @@
                
                <?php
                //edit faculty  
-                                $id=$_POST['userid'];
+                                $id=$_GET['id'];
                                 $rUsers=@mysql_query("select * from faculties where id='$id'");
                                 
                                 $row = mysql_fetch_array($rUsers);
                                 if ($row)
                                 {
-                                echo "<form action='editedsubjects.php' method='post'>";
-                                echo "Subject Code : " . "<input type=text name=code value='$row[0]'> <br>";
-                                echo "Subject Description : " . "<input type=text name=desc value='$row[1]'> <br>";
+                                echo "<form action='editedfaculty.php' method='post'>";
+								echo "Faculty ID : " . "<input type=hidden name=id value='$row[0]'>$row[0] <br>";
+                                echo "Name : " . "<input type=text name=name value='$row[1]'> <br>";
+                                echo "Contact No. : " . "<input type=text name=num value='$row[2]'> <br>";
+                                echo "Email : " . "<input type=text name=email value='$row[3]'> <br>";
                                                                 
                                 echo "<p><input type='submit' name='update' value='Update' /></p>
                                 </form>";

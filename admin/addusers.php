@@ -13,38 +13,57 @@
         </div><!--/span-->
         
                         <div class="span5">
-                            <form class="form-horizontal">
+                            <form method="post" class="form-horizontal">
                             <h2>Add Users</h2><br/><br/><br/>
                       <div class="control-group">
                         <label class="control-label">Username</label>
                         <div class="controls">
-                          <input type="text" id="inputEmail" placeholder="Username">
+                          <input type="text" name="name" placeholder="Username">
                         </div>
                       </div>
                       <div class="control-group">
                         <label class="control-label">Password</label>
                         <div class="controls">
-                          <input type="password" id="inputPassword" placeholder="Password">
+                          <input type="password" name="pass" placeholder="Password">
                         </div>
                       </div>
                        <div class="control-group">
                         <label class="control-label">Type</label>
                         <div class="controls">
-                      <select class="span2">
-                        <option>Administrartor</option>
-                        <option>Operator</option>
-                        <option>Faculty</option>
-                        <option>Student</option>
+                      <select name="type" class="span2">
+                        <option value="admin">Administrartor</option>
+                        <option value="operator">Operator</option>
+                        <option value="faculty">Faculty</option>
+                        <option value="student">Student</option>
                         </select>
                         </div>
                       </div>
                       <div class="control-group">
                         <div class="controls">
                           
-                          <button type="submit" class="btn">Add User</button>
+                           <button type="submit" name="submit" class="btn btn-primary">Add User</button>
+                  <button type="reset" class="btn">Clear</button>
                         </div>
                       </div>
                     </form>
+                    <?php
+
+											
+						if (isset($_POST['submit']))
+						{
+						$name = $_POST['name'];
+						$pass = $_POST['pass'];
+						$type = $_POST['type'];
+						
+															
+						$query = "Insert into users values ('','$name', SHA('$pass'),'$type', NOW())";
+						
+						$result = @mysql_query($query);
+						echo "<h1>Users Added</h1>";
+						
+						mysql_close();
+						}
+						?>    
         </div>
 
         <!-- /container -->

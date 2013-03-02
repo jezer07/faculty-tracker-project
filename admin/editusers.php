@@ -15,7 +15,7 @@
                 <div class="span5">
                 <?php
                  
-                                $id=$_POST['userid'];
+                                $id=$_GET['id'];
                                 $rUsers=@mysql_query("select * from users where id='$id'");
                                 
                                 $row = mysql_fetch_array($rUsers);

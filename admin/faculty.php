@@ -34,8 +34,8 @@
                                 echo "<td>$row[1]</td>";
 								echo "<td>$row[2]</td>";
                                 echo "<td>$row[3]</td>";
-								echo "<td><form action='editusers.php' method='post'><input type='hidden' name='userid' value='$row[0]'><button type='submit'><i class='icon-edit'></i></button></form><a class='btn' href='#'><i class='icon-remove'></i></a></td>";
-                                echo "</tr>";
+								echo "<td><a class='btn' href='editfaculty.php?id=$row[0]'><i class='icon-edit'></i></button></a><a class='btn' href='process=?id=$row[0]'><i class='icon-remove'></i></a></td>";
+								echo "</tr>";
                                 $i++;
                         }
                                         echo "</table>";
