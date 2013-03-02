@@ -39,6 +39,18 @@
                           <input type="text" name="email" placeholder="Email">
                         </div>
                       </div>
+                      <div class="control-group">
+                        <label class="control-label">Username: </label>
+                        <div class="controls">
+                          <input type="text" name="username" placeholder="Username">
+                        </div>
+                      </div>
+                      <div class="control-group">
+                        <label class="control-label">Password: </label>
+                        <div class="controls">
+                          <input type="password" name="pass" placeholder="Password">
+                        </div>
+                      </div>
                        <div class="control-group">
                         <div class="controls">
                           
@@ -56,12 +68,24 @@
 						$name = $_POST['name'];
 						$contact = $_POST['contact'];
 						$email = $_POST['email'];
+						$username = $_POST['username'];
+						$password = $_POST['pass'];
+						
+						$qUser = "Insert into users values ('', '$username', SHA('$password'), 'faculty', NOW())";
+						$result = @mysql_query($qUser);
+						$rUsers=@mysql_query("select * from users where username='$username'");
+                                
+                                $row = mysql_fetch_array($rUsers);
+                                if ($row)
+								{
+								$rr= $row[0];
+								}
 															
-						$query = "Insert into faculties values ('$id','$name','$contact','$email')";
+						$query = "Insert into faculties values ('$id','$name','$contact','$email','$rr', NOW())";
 						$result = @mysql_query($query);
 						
 						echo "<h1>Faculty Added</h1>";
-						
+						echo $query;
 						mysql_close();
 						}
 						?>    

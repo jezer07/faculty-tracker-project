@@ -1,10 +1,40 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
-</head>
+        <?php include("header.php");?>
+<div class="row">
+             <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Actions</li>
+              <li><a href="addfaculty.php"><i class=" icon-plus-sign"></i>Add Faculty</a></li>
+              <li class="active"><a href="faculty.php"><i class="icon-eye-open"></i>View Faculty</a></li>
 
-<body>
-</body>
-</html>
+             
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        
+                <div class="span5">
+               
+               <?php
+                                   
+                                        $id = $_POST['id'];
+                                        $name = $_POST['name'];
+										$num = $_POST['num'];
+                                        $email = $_POST['email'];
+                                        
+                                        $query = "Select * FROM faculties";
+                                        $result = @mysql_query($query);
+                                        $row = mysql_fetch_array($result);
+                                        if ($row)
+                                        {
+                                        $query = "Update faculties set id='$id', name='$name', contactno='$num', email='$email' WHERE id='$id'";
+                                        mysql_query($query);
+                                        echo "<h2>Record has been updated...</h2>";
+                                        }
+                ?>
+               
+                   
+            	</div>
+
+
+        <!-- /container -->
+     <?php include("footer.php");?>

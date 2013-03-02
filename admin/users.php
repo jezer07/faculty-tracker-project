@@ -32,7 +32,7 @@
                                 echo "<td>$row[0]</td>";
                                 echo "<td>$row[1]</td>";
                                 echo "<td>$row[3]</td>";
-								echo "<td><a class='btn' href='editusers.php?id=$row[0]'><i class='icon-edit'></i></button></a><a class='btn' href='process=?id=$row[0]'><i class='icon-remove'></i></a></td>";
+								echo "<td><a class='btn' href='editusers.php?id=$row[0]'><i class='icon-edit'></i></button></a><a class='btn' href='deleteusers.php?id=$row[0]'><i class='icon-remove'></i></a></td>";
                                 echo "</tr>";
                                 $i++;
                         }

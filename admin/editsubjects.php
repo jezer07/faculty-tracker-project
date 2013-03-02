@@ -22,6 +22,7 @@
                                 if ($row)
                                 {
                                 echo "<form action='editedsubjects.php' method='post'>";
+								echo "<input type='hidden' name='id' value='$row[0]'/>";
                                 echo "Subject Code : " . "<input type=text name=code value='$row[0]'> <br>";
                                 echo "Subject Description : " . "<input type=text name=desc value='$row[1]'> <br>";
                                                                 

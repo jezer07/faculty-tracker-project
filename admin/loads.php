@@ -13,12 +13,34 @@
         </div><!--/span-->
         
                <div class="span5">
-               <table class="table">
-               <tr><td>Username</td><td>Type</td><td>Action</td></tr>
-               <tr><td>Admin</td><td>Administrator</td><td><a class="btn" href="#"><i class="icon-edit"></i></a><a class="btn" href="#"><i class="icon-remove"></i></a></td></tr>
-               
-               </table>
-               
+                <?php
+                        $rFaculty=@mysql_query("select * from faculties");
+                                        
+                                $i=1;
+                                echo "<table class='table' border='1'>";
+                                echo "<tr>";
+                                echo "<td>Faculty ID </td>";
+                                echo "<td>Name </td>";
+                                echo "<td>Contact No</td>";
+								echo "<td>Email</td>";
+								echo "<td>Action</td>";
+                                echo "</tr>";
+                                        
+                                while($row=mysql_fetch_array($rFaculty))
+                                {
+                                        
+                                echo "<tr>";
+                                echo "<td>$row[0]</td>";
+                                echo "<td>$row[1]</td>";
+								echo "<td>$row[2]</td>";
+                                echo "<td>$row[3]</td>";
+								echo "<td><a class='btn' href='editloads.php?id=$row[0]'><i class='icon-edit'></i></button></a><a class='btn' href='deleteloads.php?id=$row[0]'><i class='icon-remove'></i></a></td>";
+								echo "</tr>";
+                                $i++;
+                        }
+                                        echo "</table>";
+
+        ?>
                    
             	</div>
 

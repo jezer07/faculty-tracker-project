@@ -22,7 +22,8 @@
                                 if ($row)
                                 {
                                 echo "<form action='editedsections.php' method='post'>";
-                                echo "Section : " . "<input type=text name=code value='$row[0]'> <br>";
+								echo "<input type='hidden' name='id' value='$row[0]'/>";
+                                echo "Section : " . "<input type=text name=section value='$row[0]'> <br>";
                                                                 
                                 echo "<p><input type='submit' name='update' value='Update' /></p>
                                 </form>";

@@ -22,8 +22,9 @@
                                 if ($row)
                                 {
                                 echo "<form action='editedrooms.php' method='post'>";
-								echo "Room : " . "<input type=text name=name value='$row[0]'> <br>";
-                                echo "Room Type : " . "<input type=text name=num value='$row[1]'> <br>";
+								echo "<input type=hidden name=id value='$row[0]'>";
+								echo "Room : " . "<input type=text name=room value='$row[0]'> <br>";
+                                echo "Room Type : " . "<input type=text name=type value='$row[1]'> <br>";
                                
                                                                 
                                 echo "<p><input type='submit' name='update' value='Update' /></p>

@@ -17,13 +17,14 @@
                                    
                                         $code = $_POST['code'];
                                         $desc = $_POST['desc'];
+										$id = $_POST['id'];
                                         
                                         $qSubjects = "Select * FROM subjects";
                                         $rSubjects = @mysql_query($qSubjects);
                                         $row = mysql_fetch_array($rSubjects);
                                         if ($row)
                                         {
-                                        $query = "Update subjects set id='$code', subjectdesc='$desc' WHERE id='$code'";
+                                        $query = "Update subjects set id='$code', subjectdesc='$desc' WHERE id='$id'";
                                         mysql_query($query);
                                         echo "<h2>Record has been updated...</h2>";
                                         }
