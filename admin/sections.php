@@ -23,9 +23,7 @@
                                 echo "<thead><tr>";
                                 echo "<th width='99'>Section Code</th>";
                                	echo "<th width='99'>Action</th>";
-                                echo "</tr></thead>
-								<tbody>
-								";
+                                echo "</tr></thead><tbody>";
                                         
                                 while($row=mysql_fetch_array($rSections))
                                 {

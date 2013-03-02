@@ -129,7 +129,6 @@
     <option>20:30</option>
     </select>	
     
-    </select>
     </div>
     </div>
     

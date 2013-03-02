@@ -19,14 +19,14 @@
                         $rFaculty=@mysql_query("select * from faculties");
                                         
                                 $i=1;
-                                echo "<table class='table' border='1'>";
-                                echo "<tr>";
-                                echo "<td>Faculty ID </td>";
-                                echo "<td>Name </td>";
-                                echo "<td>Contact No</td>";
-								echo "<td>Email</td>";
-								echo "<td>Action</td>";
-                                echo "</tr>";
+                                echo "<table class='table table-bordered' id='dt'>";
+                                echo "<thead><tr>";
+                                echo "<th>Faculty ID </th>";
+                                echo "<th>Name </th>";
+                                echo "<th>Contact No</th>";
+								echo "<th>Email</th>";
+								echo "<th>Action</th>";
+                                echo "</tr></thead><tbody>";
                                         
                                 while($row=mysql_fetch_array($rFaculty))
                                 {
@@ -40,7 +40,7 @@
 								echo "</tr>";
                                 $i++;
                         }
-                                        echo "</table>";
+                                        echo "</tbody></table>";
 
         ?>
           </fieldset>         

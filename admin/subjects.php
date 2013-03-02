@@ -19,12 +19,12 @@
                         $rSubjects=@mysql_query("select * from subjects");
                                         
                                 $i=1;
-                                echo "<table class='table' border='1'>";
-                                echo "<tr>";
-                                echo "<td>Subject Code </td>";
-                                echo "<td>Subject Description </td>";
-                         		echo "<td>Action</td>";
-                                echo "</tr>";
+                                echo "<table class='table table-bordered' id='dt'>";
+                                echo "<thead><tr>";
+                                echo "<th>Subject Code </t>";
+                                echo "<th>Subject Description </th>";
+                         		echo "<th>Action</th>";
+                                echo "</tr></thead><tbody>";
                                         
                                 while($row=mysql_fetch_array($rSubjects))
                                 {
@@ -36,7 +36,7 @@
                                 echo "</tr>";
                                 $i++;
                         }
-                                        echo "</table>";
+                                        echo "</tbody></table>";
 
         ?>
                </fieldset>

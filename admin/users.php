@@ -20,13 +20,13 @@
                         $rUsers=@mysql_query("select * from users");
                                         
                                 $i=1;
-                                echo "<table class='table' border='1'>";
-                                echo "<tr>";
-                                echo "<td>User ID </td>";
-                                echo "<td>Username </td>";
-                                echo "<td>User Type</td>";
-								echo "<td>Action</td>";
-                                echo "</tr>";
+                                echo "<table class='table table-bordered' id='dt'>";
+                                echo "<thead><tr>";
+                                echo "<th>User ID </th>";
+                                echo "<th>Username </th>";
+                                echo "<th>User Type</th>";
+								echo "<th>Action</th>";
+                                echo "</tr></thead><tbody>";
                                         
                                 while($row=mysql_fetch_array($rUsers))
                                 {
@@ -39,7 +39,7 @@
                                 echo "</tr>";
                                 $i++;
                         }
-                                        echo "</table>";
+                                        echo "</tbody></table>";
 
         ?>
                

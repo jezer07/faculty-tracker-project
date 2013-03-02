@@ -19,12 +19,12 @@
                         $rRoom=@mysql_query("select * from rooms");
                                         
                                 $i=1;
-                                echo "<table class='table' border='1'>";
-                                echo "<tr>";
+                                echo "<table class='table table-bordered' id='dt'>";
+                                echo "<thead><tr>";
                                 echo "<td>Room </td>";
                                 echo "<td>Room Type </td>";
 								echo "<td>Action</td>";
-                                echo "</tr>";
+                                echo "</tr></thead><tbody>";
                                         
                                 while($row=mysql_fetch_array($rRoom))
                                 {
@@ -36,7 +36,7 @@
                                 echo "</tr>";
                                 $i++;
                         }
-                                        echo "</table>";
+                                        echo "</tbody></table>";
 
         ?>
                    </fieldset>
