@@ -13,11 +13,33 @@
         </div><!--/span-->
         
                 <div class="span5">
-               <table class="table">
-               <tr><td>Username</td><td>Type</td><td>Action</td></tr>
-               <tr><td>Admin</td><td>Administrator</td><td><a class="btn" href="#"><i class="icon-edit"></i></a><a class="btn" href="#"><i class="icon-remove"></i></a></td></tr>
+                <?php
+                        $result=@mysql_query("select * from users");
+                                        
+                                $i=1;
+                                echo "<table class='table' border='1'>";
+                                echo "<tr>";
+                                echo "<td>User ID </td>";
+                                echo "<td>Username </td>";
+                                echo "<td>User Type</td>";
+								echo "<td>Action</td>";
+                                echo "</tr>";
+                                        
+                                while($row=mysql_fetch_array($result))
+                                {
+                                        
+                                echo "<tr>";
+                                echo "<td>$row[0]</td>";
+                                echo "<td>$row[1]</td>";
+                                echo "<td>$row[3]</td>";
+								echo "<td><a class='btn' href='#'><i class='icon-edit'></i></a><a class='btn' href='#'><i class='icon-remove'></i></a></td>";
+                                echo "</tr>";
+                                $i++;
+                        }
+                                        echo "</table>";
+
+        ?>
                
-               </table>
                
                    
             	</div>
