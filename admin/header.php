@@ -44,9 +44,12 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">File Maintenance <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Faculty</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
+                                    <li><a href="users.php">Users</a></li>
+                                    <li><a href="faculty.php">Faculty</a></li>
+                                    <li><a href="subjects.php">Subjects</a></li>
+                                    <li><a href="sections.php">Sections</a></li>
+                                    <li><a href="rooms.php">Rooms</a></li>
+                                    <li><a href="loads.php">Loads</a></li>
                                     <li class="divider"></li>
                                     <li class="nav-header">Nav header</li>
                                     <li><a href="#">Separated link</a></li>
@@ -72,15 +75,4 @@
             <!-- Main hero unit for a primary marketing message or call to action -->
 
             <!-- Example row of columns -->
-            <div class="row">
-             <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Actions</li>
-              <li><a href="clients.jsp"><i class=" icon-plus-sign"></i>New Client</a></li>
-              <li class="active"><a href="viewclients.jsp"><i class="icon-eye-open"></i>View Clients</a></li>
-
-             
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
+            
