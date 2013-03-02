@@ -1,29 +1,14 @@
-        <?php include("header.php");
-		
-		
-		//get all faculties
-		$qFaculties = "SELECT name FROM faculties";
-		$eFaculties = mysql_query($qFaculties) or die(mysql_error());
-		$facultyArray= array();
-		while($row = mysql_fetch_array($eFaculties)){
-			array_push($facultyArray,$row[0]);
-			}		
-		
-		
-		?>
         
-             <script>
+		
+		<?php include("header.php");?>
+        
             
              
-             </script>
-             
                 <div class="span9">
-          		 <?php
-                 	
-				 ?>
+          		
                 
                 <h3>Search by Name</h3><form class="form-search">
-    <input type="text" class="input-medium search-query" data-items='4' data-provide="typeahead" data-source='<?php echo json_encode($facultyArray); ?>'>
+    <input type="text" class="input-medium search-query">
     <button type="submit" class="btn">Search</button>
     </form>
                 <hr/>
@@ -41,7 +26,15 @@
             </thead>
             <tbody>
             	<tr>
-                	<td>ITC30-304i<br/>7:30-8:30<br/>H-410></td>
+                	<td>ITC30-304i<br/>7:30-8:30<br/>H-410</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                </tr>
+                
+                 	<tr>
+                	<td>ITC30-304i<br/>7:30-8:30<br/>H-410</td>
                     <td>a</td>
                     <td>a</td>
                     <td>a</td>
@@ -63,11 +56,10 @@
 
         <!-- /container -->
      <?php include("footer.php");?>
-	   <script>
+	  <script>
             $(document).ready(function(){
-				
-				$("#sname").attr("class","active");
-					
+				$("#sroom").attr("class","active");
+			
 				});
              
              </script>

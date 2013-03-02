@@ -1,15 +1,3 @@
-<?php
-session_start();
-
-if(!isset($_SESSION["userid"])){
-	header("Location:../index.php");
-	
-	}
-	
-require '../mysql_connect.php';
-	
- ?>
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -51,14 +39,12 @@ require '../mysql_connect.php';
                     </a>
                     <a class="brand" href="#">Potato Tracking</a>
                     <div class="nav-collapse collapse">
-                        <ul class="nav">
-                            <li class="active"><a href="sname.php">Search</a></li>
-                          
+                        
                             
                         </ul>
-                        <form class="navbar-form pull-right">
-                            <input class="span2" type="text" placeholder="Email">
-                            <input class="span2" type="password" placeholder="Password">
+                        <form class="navbar-form pull-right" action="authenticate.php" method="post">
+                            <input class="span2" type="text" placeholder="Username" name="user">
+                            <input class="span2" type="password" placeholder="Password" name="password">
                             <button type="submit" class="btn">Sign in</button>
                         </form>
                     </div><!--/.nav-collapse -->
@@ -72,15 +58,5 @@ require '../mysql_connect.php';
 
             <!-- Example row of columns -->
             <div class="row">
-             <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Search By</li>
-              <li id="sname"><a href="sname.php"><i class=" icon-plus-sign"></i>Faculty name</a></li>
-              <li id="sdaytime"><a href="sdaytime.php"><i class="icon-eye-open"></i>Day time</a></li>
-              <li id="sroom"><a href="sroom.php"><i class="icon-eye-open"></i>Room</a></li>
-            </ul>
-          </div><!--/.well -->
+   
         </div><!--/span-->
-
-

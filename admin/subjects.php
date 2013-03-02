@@ -13,11 +13,30 @@
         </div><!--/span-->
         
                <div class="span5">
-               <table class="table">
-               <tr><td>Username</td><td>Type</td><td>Action</td></tr>
-               <tr><td>Admin</td><td>Administrator</td><td><a class="btn" href="#"><i class="icon-edit"></i></a><a class="btn" href="#"><i class="icon-remove"></i></a></td></tr>
-               
-               </table>
+               <?php
+                        $rSubjects=@mysql_query("select * from subjects");
+                                        
+                                $i=1;
+                                echo "<table class='table' border='1'>";
+                                echo "<tr>";
+                                echo "<td>Subject Code </td>";
+                                echo "<td>Subject Description </td>";
+                         		echo "<td>Action</td>";
+                                echo "</tr>";
+                                        
+                                while($row=mysql_fetch_array($rSubjects))
+                                {
+                                        
+                                echo "<tr>";
+                                echo "<td>$row[0]</td>";
+                                echo "<td>$row[1]</td>";
+                               	echo "<td><form action='editsubjects.php' method='post'><input type='hidden' name='userid' value='$row[0]'><button type='submit'><i class='icon-edit'></i></button></form><form action='deletesubjects.php' method='post'><input type='hidden' name='userid' value='$row[0]'><button type='submit'><i class='icon-remove'></i></button></form></td>";
+                                echo "</tr>";
+                                $i++;
+                        }
+                                        echo "</table>";
+
+        ?>
                
                    
             	</div>
