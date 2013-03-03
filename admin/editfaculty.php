@@ -24,14 +24,30 @@
                                 $row = mysql_fetch_array($rUsers);
                                 if ($row)
                                 {
-                                echo "<form action='editedfaculty.php' method='post'>";
-								echo "Faculty ID : " . "<input type=hidden name=id value='$row[0]'>$row[0] <br>";
-                                echo "Name : " . "<input type=text name=name value='$row[1]'> <br>";
-                                echo "Contact No. : " . "<input type=text name=num value='$row[2]'> <br>";
-                                echo "Email : " . "<input type=text name=email value='$row[3]'> <br>";
-                                                                
-                                echo "<p><input type='submit' name='update' value='Update' /></p>
-                                </form>";
+                                echo "<form action='editedfaculty.php' method='post' class='form-horizontal'>"; 
+								echo "<div class='control-group'>";
+								echo "<label class='control-label'>Faculty ID : </label>";
+								echo "<div class='controls'>";
+								echo "<input type=hidden name=id value='$row[0]'>$row[0] <br>";
+								echo "</div></div>"; 
+								echo "<div class='control-group'>";
+								echo "<label class='control-label'>Name :  </label>";
+								echo "<div class='controls'>";
+                                echo "<input type=text name=name value='$row[1]'> <br>";
+								echo "</div></div>"; 
+								echo "<div class='control-group'>";
+								echo "<label class='control-label'>Contact No. : </label>";
+								echo "<div class='controls'>";
+                                echo "<input type=text name=num value='$row[2]'> <br>";
+								echo "</div></div>"; 
+								echo "<div class='control-group'>";
+								echo "<label class='control-label'>Email : </label>";
+								echo "<div class='controls'>";
+                                echo "<input type=email name=email value='$row[3]'> <br>";                           
+                                echo "</div></div>";                            
+								echo "<div class='control-group'>";
+								echo "<div class='controls'>";   
+                                echo "<button type='submit' name='submit' class='btn btn-primary'>Update</button></div></div></form>";
                                 }
 
                                         

@@ -23,15 +23,30 @@
                                 $row = mysql_fetch_array($rUsers);
                                 if ($row)
                                 {
-                                echo "<form action='updated.php' method='post'>";
-                                echo "User ID : " . "<input type=hidden name=user_id value='$row[0]'>$row[0]" . "<br>";
-                                echo "Username : " . "<input type=text name=ln value='$row[1]'> <br>";
-                                echo "Old Password : " . "<input type=password name=fn value=''> <br>";
-								echo "New Password : " . "<input type=password name=fn value=''> <br>";
-								echo "Type : " . "<input type=text name=ln value='$row[3]'> <br>";
-                                                                
-                                echo "<p><input type='submit' name='update' value='Update' /></p>
-                                </form>";
+                                echo "<form action='editedusers.php' method='post' class='form-horizontal'>";
+								echo "<div class='control-group'>";
+								echo "<label class='control-label'>User ID : </label>";
+								echo "<div class='controls'>";
+                                echo "<input type=hidden name=id value='$row[0]'>$row[0]" . "<br>";
+								echo "</div></div>"; 
+								echo "<div class='control-group'>";
+								echo "<label class='control-label'>Username : </label>";
+								echo "<div class='controls'>";
+                                echo "<input type=text name=name value='$row[1]'> <br>";
+								echo "</div></div>"; 
+								echo "<div class='control-group'>";
+								echo "<label class='control-label'>New Password : </label>";
+								echo "<div class='controls'>";
+								echo "<input type=password name=new value=''> <br>";
+								echo "</div></div>"; 
+								echo "<div class='control-group'>";
+								echo "<label class='control-label'>Type : </label>";
+								echo "<div class='controls'>";
+								echo "<input type=text name=type value='$row[3]'> <br>";
+                                 echo "</div></div>";                            
+								echo "<div class='control-group'>";
+								echo "<div class='controls'>";   
+                                echo "<button type='submit' name='submit' class='btn btn-primary'>Update</button></div></div></form>";
                                 }
 
                                         

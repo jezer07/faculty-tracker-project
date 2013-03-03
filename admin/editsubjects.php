@@ -23,13 +23,21 @@
                                 $row = mysql_fetch_array($rUsers);
                                 if ($row)
                                 {
-                                echo "<form action='editedsubjects.php' method='post'>";
+                                echo "<form action='editedsubjects.php' method='post' class='form-horizontal'>";
 								echo "<input type='hidden' name='id' value='$row[0]'/>";
-                                echo "Subject Code : " . "<input type=text name=code value='$row[0]'> <br>";
-                                echo "Subject Description : " . "<input type=text name=desc value='$row[1]'> <br>";
-                                                                
-                                echo "<p><input type='submit' name='update' value='Update' /></p>
-                                </form>";
+								echo "<div class='control-group'>";
+								echo "<label class='control-label'>Subject Code </label>";
+								echo "<div class='controls'>";
+                                echo "<input type=text name=code value='$row[0]'> <br>";
+								echo "</div></div>"; 
+								echo "<div class='control-group'>";
+								echo "<label class='control-label'>Subject Description : </label>";
+								echo "<div class='controls'>";
+                                echo "<input type=text name=desc value='$row[1]'> <br>";
+                                echo "</div></div>";                            
+								echo "<div class='control-group'>";
+								echo "<div class='controls'>";   
+                                echo "<button type='submit' name='submit' class='btn btn-primary'>Update</button></div></div></form>";
                                 }
 
                                         
