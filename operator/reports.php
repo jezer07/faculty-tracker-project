@@ -7,7 +7,7 @@
                 <div class="span9">           
         
         		
-                
+                <a href="printReports.php">print</a>
                 
                 
      

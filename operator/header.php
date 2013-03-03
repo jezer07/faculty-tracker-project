@@ -21,7 +21,7 @@ require '../mysql_connect.php';
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-
+		<script src="../js/jspdf.js"></script>
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <style>
             body {
