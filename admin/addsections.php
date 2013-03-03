@@ -4,8 +4,9 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Actions</li>
-              <li><a href="addsections.php"><i class=" icon-plus-sign"></i>Add Sections</a></li>
-              <li class="active"><a href="sections.php"><i class="icon-eye-open"></i>View Sections</a></li>
+              <li><a href="sections.php"><i class="icon-eye-open"></i>View Sections</a></li>
+              <li class="active"><a href="addsections.php"><i class=" icon-plus-sign"></i>Add Sections</a></li>
+              
 
              
             </ul>
@@ -19,7 +20,7 @@
                            <div class="control-group">
                 <label class="control-label">Section: </label>
                 <div class="controls">
-                  <input type="text" name="section" class="span2" placeholder="Section">
+                  <input type="text" name="section" class="span2" placeholder="Section" required>
                 </div>
               </div>
               <div class="control-group">

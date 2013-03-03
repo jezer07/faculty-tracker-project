@@ -4,8 +4,9 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Actions</li>
-              <li><a href="addsections.php"><i class=" icon-plus-sign"></i>Add Sections</a></li>
               <li class="active"><a href="sections.php"><i class="icon-eye-open"></i>View Sections</a></li>
+              <li><a href="addsections.php"><i class=" icon-plus-sign"></i>Add Sections</a></li>
+              
 
              
             </ul>

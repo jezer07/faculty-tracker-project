@@ -15,11 +15,11 @@
                <div class="span9">
                 <fieldset>
         <legend>Loads</legend>
-                      <form class="form-horizontal">
+                      <form action="addloads.php" method="post" class="form-horizontal">
     <div class="control-group">
     <label class="control-label">Faculty</label>
     <div class="controls">
-    <select >
+    <select name="faculty" >
     <?php 
 	////comment
 	$rfaculty=@mysql_query("select * from faculties");
@@ -37,7 +37,7 @@
     <div class="control-group">
     <label class="control-label">Subject Code</label>
     <div class="controls">
-    <select>
+    <select name="subject">
     <?php $rsubjects=@mysql_query("select * from subjects");
 	 $i=1;
             
@@ -53,7 +53,7 @@
     <div class="control-group">
     <label class="control-label">Section</label>
     <div class="controls">
-    <select>
+    <select name="section">
     <?php $rsections=@mysql_query("select * from sections");
 	 $i=1;
             
@@ -69,7 +69,7 @@
     <div class="control-group">
     <label class="control-label">Room</label>
     <div class="controls">
-    <select>
+    <select name="room">
     <?php $rroom=@mysql_query("select * from rooms");
 	 $i=1;
             
@@ -86,19 +86,19 @@
     <div class="control-group">
     <label class="control-label">Day</label>
     <div class="controls">
-    <select>
-    <option>Monday</option>
-    <option>Tuesday</option>
-    <option>Wednesday</option>
-    <option>Thursday</option>
-    <option>Friday</option>
+    <select name="day">
+    <option value="M">Monday</option>
+    <option value="T">Tuesday</option>
+    <option value="W">Wednesday</option>
+    <option value="TH">Thursday</option>
+    <option value="F">Friday</option>
     </select>
     </div>
     </div>
     <div class="control-group">
     <label class="control-label">Start</label>
     <div class="controls">
-    <select>
+    <select name="start">
         <option>7:00</option>
     <option>7:30</option>
     <option>8:00</option>
@@ -135,7 +135,7 @@
     <div class="control-group">
     <label class="control-label">End</label>
     <div class="controls">
-    <select>
+    <select name="end">
     <option>7:30</option>
     <option>8:00</option>
     <option>8:30</option>
@@ -176,6 +176,7 @@
     </div>
     
     </form>
+     
     </fieldset>
             	</div>
         <!-- /container -->

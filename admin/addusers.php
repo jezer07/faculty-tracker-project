@@ -4,8 +4,9 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Actions</li>
-              <li><a href="addusers.php"><i class=" icon-plus-sign"></i>Add Users</a></li>
-              <li class="active"><a href="users.php"><i class="icon-eye-open"></i>View Users</a></li>
+              <li><a href="users.php"><i class="icon-eye-open"></i>View Users</a></li>
+              <li class="active"><a href="addusers.php"><i class=" icon-plus-sign"></i>Add Users</a></li>
+              
 
              
             </ul>
@@ -20,13 +21,13 @@
                       <div class="control-group">
                         <label class="control-label">Username</label>
                         <div class="controls">
-                          <input type="text" name="name" placeholder="Username">
+                          <input type="text" name="name" placeholder="Username" required>
                         </div>
                       </div>
                       <div class="control-group">
                         <label class="control-label">Password</label>
                         <div class="controls">
-                          <input type="password" name="pass" placeholder="Password">
+                          <input type="password" name="pass" placeholder="Password" required>
                         </div>
                       </div>
                        <div class="control-group">

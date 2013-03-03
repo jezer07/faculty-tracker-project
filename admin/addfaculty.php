@@ -4,8 +4,9 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Actions</li>
-              <li><a href="addfaculty.php"><i class=" icon-plus-sign"></i>Add Faculty</a></li>
-              <li class="active"><a href="faculty.php"><i class="icon-eye-open"></i>View Faculty</a></li>
+              <li><a href="faculty.php"><i class="icon-eye-open"></i>View Faculty</a></li>
+              <li class="active"><a href="addfaculty.php"><i class=" icon-plus-sign"></i>Add Faculty</a></li>
+              
 
              
             </ul>
@@ -20,37 +21,25 @@
                       <div class="control-group">
                         <label class="control-label">Faculty ID: </label>
                         <div class="controls">
-                          <input type="text" name="id" placeholder="Faculty ID">
+                          <input type="text" name="id" placeholder="Faculty ID" required>
                         </div>
                       </div>
                       <div class="control-group">
                         <label class="control-label">Name: </label>
                         <div class="controls">
-                          <input type="text" name="name" placeholder="Name">
+                          <input type="text" name="name" placeholder="Name" required>
                         </div>
                       </div>
                       <div class="control-group">
                         <label class="control-label">Contact No: </label>
                         <div class="controls">
-                          <input type="text" name="contact" placeholder="Contact No.">
+                          <input type="text" name="contact" placeholder="Contact No." required>
                         </div>
                       </div>
                       <div class="control-group">
                         <label class="control-label">Email: </label>
                         <div class="controls">
-                          <input type="email" name="email" placeholder="Email">
-                        </div>
-                      </div>
-                      <div class="control-group">
-                        <label class="control-label">Username: </label>
-                        <div class="controls">
-                          <input type="text" name="username" placeholder="Username">
-                        </div>
-                      </div>
-                      <div class="control-group">
-                        <label class="control-label">Password: </label>
-                        <div class="controls">
-                          <input type="password" name="pass" placeholder="Password">
+                          <input type="email" name="email" placeholder="Email" required>
                         </div>
                       </div>
                        <div class="control-group">
@@ -70,10 +59,27 @@
 						$name = $_POST['name'];
 						$contact = $_POST['contact'];
 						$email = $_POST['email'];
-						$username = $_POST['username'];
-						$password = $_POST['pass'];
 						
-						$qUser = "Insert into users values ('', '$username', SHA('$password'), 'faculty', NOW())";
+						$qValidate = "Select * from faculties";
+						$rValidate = @mysql_query($qValidate);
+						$i=0;
+						$validate=0;
+						 while($row=mysql_fetch_array($rValidate))
+                        {
+							if ($row[$i]==$id)
+							{
+								$validate = 1;
+							}
+							$i++;
+						}
+						if ($validate ==1)
+						{
+							echo "<div class='alert alert-error'><button type='button' class='close data-dismiss='alert>&times;</button><h4>Error!</h4>There is already a faculty with the same id!</div>";
+							exit;
+						}
+						else
+						{
+						$qUser = "Insert into users values ('', '$id', SHA('$id'), 'faculty', NOW())";
 						$result = @mysql_query($qUser);
 						$rUsers=@mysql_query("select * from users where username='$username'");
                                 
@@ -88,7 +94,7 @@
 						
 						echo "<div class='alert alert-success'><button type='button' class='close data-dismiss='alert>&times;</button><h4>Success!</h4>Your request has been carried out without a hitch!</div>";
 						mysql_close();
-						}
+						}}
 						?>    </fieldset>
         </div>
 

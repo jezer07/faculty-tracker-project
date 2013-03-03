@@ -4,8 +4,9 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Actions</li>
-              <li><a href="addrooms.php"><i class=" icon-plus-sign"></i>Add Rooms</a></li>
-              <li class="active"><a href="rooms.php"><i class="icon-eye-open"></i>View Rooms</a></li>
+               <li><a href="rooms.php"><i class="icon-eye-open"></i>View Rooms</a></li>
+              <li class="active"><a href="addrooms.php"><i class=" icon-plus-sign"></i>Add Rooms</a></li>
+             
 
              
             </ul>
@@ -20,7 +21,7 @@
               <div class="control-group">
                 <label class="control-label">Room: </label>
                 <div class="controls">
-                  <input type="text" name="room" class="span2" placeholder="Room">
+                  <input type="text" name="room" class="span2" placeholder="Room" required>
                 </div>
               </div>
               <div class="control-group">

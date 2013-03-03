@@ -4,9 +4,8 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Actions</li>
-              <li><a href="addfaculty.php"><i class=" icon-plus-sign"></i>Add Faculty</a></li>
               <li class="active"><a href="faculty.php"><i class="icon-eye-open"></i>View Faculty</a></li>
-
+              <li><a href="addfaculty.php"><i class=" icon-plus-sign"></i>Add Faculty</a></li>
              
             </ul>
           </div><!--/.well -->

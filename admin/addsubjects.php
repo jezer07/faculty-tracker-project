@@ -4,8 +4,9 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Actions</li>
-              <li><a href="addsubjects.php"><i class=" icon-plus-sign"></i>Add Subjects</a></li>
-              <li class="active"><a href="subjects.php"><i class="icon-eye-open"></i>View Subjects</a></li>
+              <li><a href="subjects.php"><i class="icon-eye-open"></i>View Subjects</a></li>
+              <li class="active"><a href="addsubjects.php"><i class=" icon-plus-sign"></i>Add Subjects</a></li>
+              
 
              
             </ul>
@@ -20,13 +21,13 @@
               <div class="control-group">
                 <label class="control-label">Subject Code: </label>
                 <div class="controls">
-                  <input type="text" name="code" class="span2" placeholder="Code">
+                  <input type="text" name="code" class="span2" placeholder="Code" required>
                 </div>
               </div>
               <div class="control-group">
                 <label class="control-label">Subject Description: </label>
                 <div class="controls">
-                 <input type="text" name="desc" class="span4" placeholder="Description">
+                 <input type="text" name="desc" class="span4" placeholder="Description" required>
                 </div>
               </div>
               <div class="control-group">
