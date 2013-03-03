@@ -1,4 +1,19 @@
+<?php
+include '../mysql_connect.php';
+$name = $_GET['name'];
 
+$qFaculty = "SELECT faculties.id,name,sectionid,subjectid,room,day,DATE_FORMAT(start,'%k:%i') as start,DATE_FORMAT(end,'%k:%i')as end FROM faculties JOIN schedules ON faculties.id = schedules.facultyid WHERE faculties.name = '$name' order by start,end asc";
+
+$eFaculty= mysql_query($qFaculty);
+
+if(mysql_num_rows($eFaculty)<1){
+header("Location:reports.php?name=$_GET[name]&error=1");
+exit();
+	}
+
+	
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,6 +27,10 @@
 
 </head>
 <body>
+
+<?php
+
+?>
 <script>
 	var doc = new jsPDF();
 //doc.setTextColor(0,150,0);
@@ -24,8 +43,8 @@ doc.setFontSize(20)
 doc.text(65, 60, 'Faculty Load Reports');
 doc.rect(20, 10, 175, 60);
 doc.setFontSize(15)
-doc.text(20, 85, 'Faculty Name: Mean Taduyo');
-doc.text(150,85,'ID: 12345678');
+doc.text(20, 85, 'Faculty Name:<?php echo $_GET['name']; ?>');
+doc.text(150,85,'ID: <?php //echo mysql_result($eFaculty,0,0);?>');
 doc.rect(20, 90, 174, 11);
 //doc.line(20, 130, 20, 140); // vertical line
 //doc.line(20, 130, 50, 130); // horizontal line
@@ -40,21 +59,32 @@ doc.line(160, 90, 160, 101);//v
 //doc.line(195, 140, 195, 130);//v
 //doc.line(20,140,195,140);
 doc.setFontSize(16)
-doc.text(22,97,'#');
+doc.text(25,97,'Subject');
 doc.text(58,97,'Section');
 doc.text(100,97,'Room');
 doc.text(136,97,'Day');
 doc.text(170,97,'Time');
 doc.setFontSize(13)
-doc.text(22,110,'1.');
-doc.text(22,117,'2.');
-doc.text(22,124,'3.');
-doc.text(61,110,'304I');
-doc.text(99,110,'H411');
-doc.text(131,110,'Monday');
-doc.text(164,110,'7:30-8:30')
-doc.rect(20, 103, 175, 185);
 
+<?php
+$y=110;
+while($row = mysql_fetch_assoc($eFaculty)){
+echo "
+
+
+		doc.text(22,$y,'$row[subjectid]');
+		doc.text(61,$y,'$row[sectionid]');	
+		doc.text(99,$y,'$row[room]');
+		doc.text(131,$y,'$row[day]');
+		doc.text(164,$y,'$row[start]-$row[end]')
+		
+		";
+		$y+=7;
+}//while
+		
+
+?>
+doc.rect(20, 103, 175, 185);
 	// Output as Data URI
 	doc.output('datauri');
 
