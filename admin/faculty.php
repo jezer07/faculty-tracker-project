@@ -15,6 +15,11 @@
                 <fieldset>
     <legend>Faculty</legend>
                <?php
+			   $success=$_GET['success'];
+			   if ($success==1)
+			   {
+				    echo "<div class='alert alert-success'><button type='button' class='close data-dismiss='alert>&times;</button><h4>Success!</h4>Your request has been carried out without a hitch!</div>";
+				   }
                         $rFaculty=@mysql_query("select * from faculties");
                                         
                                 $i=1;

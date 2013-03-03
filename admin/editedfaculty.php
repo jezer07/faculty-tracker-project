@@ -29,7 +29,8 @@
                                         {
                                         $query = "Update faculties set id='$id', name='$name', contactno='$num', email='$email' WHERE id='$id'";
                                         mysql_query($query);
-                                        echo "<div class='alert alert-success'><button type='button' class='close data-dismiss='alert>&times;</button><h4>Success!</h4>Your request has been carried out without a hitch!</div>";
+                                        
+										header("location:faculty.php?success=1");
                                         }
                 ?>
                
