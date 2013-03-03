@@ -21,13 +21,13 @@
               <div class="control-group">
                 <label class="control-label">Subject Code: </label>
                 <div class="controls">
-                  <input type="text" name="code" class="span2" placeholder="Code">
+                  <input type="text" name="code" class="span2" placeholder="Code" required>
                 </div>
               </div>
               <div class="control-group">
                 <label class="control-label">Subject Description: </label>
                 <div class="controls">
-                 <input type="text" name="desc" class="span4" placeholder="Description">
+                 <input type="text" name="desc" class="span4" placeholder="Description" required>
                 </div>
               </div>
               <div class="control-group">

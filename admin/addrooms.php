@@ -21,7 +21,7 @@
               <div class="control-group">
                 <label class="control-label">Room: </label>
                 <div class="controls">
-                  <input type="text" name="room" class="span2" placeholder="Room">
+                  <input type="text" name="room" class="span2" placeholder="Room" required>
                 </div>
               </div>
               <div class="control-group">

@@ -20,7 +20,7 @@
                            <div class="control-group">
                 <label class="control-label">Section: </label>
                 <div class="controls">
-                  <input type="text" name="section" class="span2" placeholder="Section">
+                  <input type="text" name="section" class="span2" placeholder="Section" required>
                 </div>
               </div>
               <div class="control-group">
