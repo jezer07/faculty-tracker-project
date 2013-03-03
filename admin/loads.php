@@ -21,7 +21,7 @@
     <div class="controls">
     <select name="faculty" >
     <?php 
-	////comment
+	
 	$rfaculty=@mysql_query("select * from faculties");
 	 $i=1;
             

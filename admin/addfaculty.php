@@ -60,28 +60,10 @@
 						$contact = $_POST['contact'];
 						$email = $_POST['email'];
 						
-						$qValidate = "Select * from faculties";
-						$rValidate = @mysql_query($qValidate);
-						$i=0;
-						$validate=0;
-						 while($row=mysql_fetch_array($rValidate))
-                        {
-							if ($row[$i]==$id)
-							{
-								$validate = 1;
-							}
-							$i++;
-						}
-						if ($validate ==1)
-						{
-							echo "<div class='alert alert-error'><button type='button' class='close data-dismiss='alert>&times;</button><h4>Error!</h4>There is already a faculty with the same id!</div>";
-							exit;
-						}
-						else
-						{
+					
 						$qUser = "Insert into users values ('', '$id', SHA('$id'), 'faculty', NOW())";
 						$result = @mysql_query($qUser);
-						$rUsers=@mysql_query("select * from users where username='$username'");
+						$rUsers=@mysql_query("select * from users where username='$id'");
                                 
                                 $row = mysql_fetch_array($rUsers);
                                 if ($row)
@@ -94,7 +76,7 @@
 						
 						echo "<div class='alert alert-success'><button type='button' class='close data-dismiss='alert>&times;</button><h4>Success!</h4>Your request has been carried out without a hitch!</div>";
 						mysql_close();
-						}}
+						}
 						?>    </fieldset>
         </div>
 
