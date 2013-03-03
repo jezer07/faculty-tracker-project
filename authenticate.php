@@ -21,7 +21,7 @@ if(mysql_num_rows($eUser)==1){
 			
 			$_SESSION["userid"] = mysql_result($eUser,0,1);
 			$_SESSION["type"] = "admin";
-			header("Location:admin/index.php");
+			header("Location:admin/sname.php");
 			break;
 			}
 		case "student":{

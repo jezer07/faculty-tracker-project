@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if(!isset($_SESSION["userid"]) || $_SESSION["type"]!="admin"){
+	header("Location:../index.php");
+	
+	}
+	
+require '../mysql_connect.php';
+	
+ ?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -42,6 +54,15 @@
                     </a>
                     <a class="brand" href="#">Potato Tracking</a>
                     <div class="nav-collapse collapse">
+                     <p class="navbar-text pull-right">(<?php echo $_SESSION['type']?>)</a>
+            		<a href="../logout.php" class="navbar-link"> Logout</a>
+            </p>
+            
+            <p class="navbar-text pull-right">
+        		
+        Logged in as <a href="#" class="navbar-link"><i class="icon-user"></i><?php echo $_SESSION['userid'] ?></a>
+            </p>
+                    
                         <ul class="nav">
                             <li class="active"><a href="#">Search</a></li>
                             <li class="dropdown">
@@ -53,29 +74,19 @@
                                     <li><a href="sections.php">Sections</a></li>
                                     <li><a href="rooms.php">Rooms</a></li>
                                     <li><a href="loads.php">Loads</a></li>
-                                    <li class="divider"></li>
-                                    <li class="nav-header">Nav header</li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li><a href="#">One more separated link</a></li>
                                 </ul>
                             </li>
                       
                             
                         </ul>
-                        <form class="navbar-form pull-right">
-                            <input class="span2" type="text" placeholder="Email">
-                            <input class="span2" type="password" placeholder="Password">
-                            <button type="submit" class="btn">Sign in</button>
-                        </form>
+                       
                     </div><!--/.nav-collapse -->
                 </div>
             </div>
         </div>
 
         <div class="container">
-<?php include('../mysql_connect.php');
-session_start();
-?>
+
             <!-- Main hero unit for a primary marketing message or call to action -->
 
             <!-- Example row of columns -->
