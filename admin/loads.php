@@ -28,6 +28,11 @@
 						   echo "The faculty has a class ongoing on that day's time";
 						   break;
 						   }
+						case '3':{
+						   echo "The Room is used on that day time";
+						   break;
+						   }
+					   
 					   
 					   }//switch
 				   echo "</div>";

@@ -21,24 +21,31 @@
 							}
 							
 						$conflict= "SELECT * FROM schedules JOIN faculties on faculties.id=schedules.facultyid WHERE schedules.facultyid='$faculty' AND day='$day' AND (start <='$start' and end >'$start')";
+						$conflict2= "SELECT * FROM schedules JOIN faculties on faculties.id=schedules.facultyid WHERE ROOM ='$room' AND day='$day' AND (start <='$start' and end >'$start')";
+					
 						
 						$checkconf= mysql_query($conflict);
-						echo mysql_num_rows($checkconf);
-						
-						
+						$checkconf2= mysql_query($conflict2);
 						if(mysql_num_rows($checkconf)>0){
 							
 							header("Location:loads.php?error=2");
 						exit();
 							
 							}
-							echo $conflict;
+						else if(mysql_num_rows($checkconf2)>0){
+							
+							header("Location:loads.php?error=3");
+						exit();
+							
+							}
+					
 													
 						$q = "Insert into schedules values ('', '$subject', '$section', '$faculty', '$room', '$day', '$start', '$end')";
 						$r = @mysql_query($q);
-						echo "<div class='alert alert-success'><button type='button' class='close data-dismiss='alert>&times;</button><h4>Success!</h4>Your request has been carried out without a hitch!</div>";
-
-	mysql_close();
+						
+						header("location:viewloads.php?success=1");
+						
+						mysql_close();
 						?>    
                    
           
