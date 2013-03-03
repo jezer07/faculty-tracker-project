@@ -13,6 +13,26 @@
         
        
                <div class="span9">
+               <?php
+               if(isset($_GET['error'])){
+				   echo "<div class='alert alert-error'>";
+				   
+				   switch ($_GET['error']){
+					   
+					   case '1':{
+						   echo "Invalid end time";
+						   break;
+						   }
+					case '2':{
+						   echo "The faculty has a class ongoing on that day's time";
+						   break;
+						   }
+					   
+					   }//switch
+				   echo "</div>";
+			 }//if
+			   
+			   ?>
                 <fieldset>
         <legend>Loads</legend>
                       <form action="addloads.php" method="post" class="form-horizontal">
