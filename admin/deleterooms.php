@@ -1,19 +1,5 @@
         <?php include("header.php");?>
-<div class="row">
-             <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Actions</li>
-              <li class="active"><a href="rooms.php"><i class="icon-eye-open"></i>View Rooms</a></li>
-              <li><a href="addrooms.php"><i class=" icon-plus-sign"></i>Add Rooms</a></li>
-              
 
-             
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-        
-              <div class="span9">
                
                <?php
 				
@@ -25,12 +11,9 @@
 				{
 				$query = "Delete from rooms WHERE id='$id'";
 				mysql_query($query); 
-				echo "<div class='alert alert-success'><button type='button' class='close data-dismiss='alert>&times;</button><h4>Success!</h4>Your request has been carried out without a hitch!</div>";
+				
+				header("Location:rooms.php?success=1");
 				}
 				?>
-                   
-            	</div>
-            	</div>
 
-        <!-- /container -->
      <?php include("footer.php");?>

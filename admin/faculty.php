@@ -1,4 +1,5 @@
-        <?php include("header.php");?>
+        <?php include("header.php");
+		 error_reporting(E_ERROR | E_PARSE);?>
 <div class="row">
              <div class="span3">
           <div class="well sidebar-nav">

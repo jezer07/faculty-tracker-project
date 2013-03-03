@@ -4,7 +4,8 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Actions</li>
-              <li class="active"><a href="loads.php"><i class="icon-eye-open"></i>Loads</a></li>
+              <li><a href="viewloads.php"><i class="icon-eye-open"></i> View Loads</a></li>
+              <li class="active"><a href="loads.php"><i class="icon-eye-open"></i> Add Loads</a></li>
 
              
             </ul>

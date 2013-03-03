@@ -73,7 +73,7 @@ require '../mysql_connect.php';
                                     <li><a href="subjects.php">Subjects</a></li>
                                     <li><a href="sections.php">Sections</a></li>
                                     <li><a href="rooms.php">Rooms</a></li>
-                                    <li><a href="loads.php">Loads</a></li>
+                                    <li><a href="viewloads.php">Loads</a></li>
                                 </ul>
                             </li>
                       
