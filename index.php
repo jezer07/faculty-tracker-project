@@ -53,18 +53,20 @@
         </div>
 
         <div class="container">
+        <div class="hero-unit">
 
-            <!-- Main hero unit for a primary marketing message or call to action -->
-
-            <!-- Example row of columns -->
-            <div class="row">
+     		<h1>Welcome to Potato</h1>
+            <h2>Faculty Tracking System</h2>
+		        </div>
+     
+       
    
         </div><!--/span-->
+     <div class="row">
+       
+                <div class="span9 offset2">
 
-        
-                <div class="span9">
-
-        <div id="myCarousel" class="carousel slide">
+        <!--<div id="myCarousel" class="carousel slide">
  <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -73,7 +75,7 @@
     <li data-target="#myCarousel" data-slide-to="4"></li>
     <li data-target="#myCarousel" data-slide-to="5"></li>
   </ol>
-   <!-- Carousel items -->
+ 
   <div class="carousel-inner">
     <div class="active item"><img src="img/1.jpg"/>
     <div class="carousel-caption">
@@ -106,13 +108,50 @@
                       <p>"Study without desire spoils the memory, and it retains nothing that it takes in." </p>
                     </div></div>
   </div>
-  <!-- Carousel nav -->
+  
   <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
   <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 </div>
+
+-->
+ <div class="row">
+			<div class="span3">
+           <h4> Students could:</h4>
+            	<ul>
+                <li>Could track faculties by name, daytime or by rooms</li>
+                
+                </ul>
+            	</div>
+                
+                <div class="span3">
+            <h4>Operators could:</h4>
+            	<ul>
+                <li>Could track faculties by name, daytime or by rooms</li>
+                <li>Print reports</li>
+                
+                </ul>
+            	</div>
+                     <div class="span3">
+            <h4>Admins could:</h4>
+            	<ul>
+                <li>Could track faculties by name, daytime or by rooms</li>
+                <li>Print reports</li>
+                <li>Add/Edit/Delete Users/Faculty/Schedule/Subjects/Sections/Rooms</li>
+                
+                </ul>
+            	</div>
+                
+            </div><!--/row-->
         
       </div>
+      
+      
+      
       </div>
+       <hr/>
+<footer>
+                <p class="text-center">&copy; Potato 2012</p>
+            </footer>
        <script>
 			  $(document).ready(function(){
 				$('.carousel').carousel({
@@ -120,10 +159,7 @@
 				});
 			  });
 			</script>
- <hr/>
-<footer>
-                <p>&copy; Potato 2012</p>
-            </footer>
+
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
