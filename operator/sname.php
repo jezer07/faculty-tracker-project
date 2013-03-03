@@ -54,7 +54,7 @@
 					 
 					 echo "
 					   <table class='table table-striped'>
-           	<caption>$_GET[name]</caption>
+           	<caption><h3>$_GET[name]</h3></caption>
             <thead>
            		<tr>
             		<th>#</th>

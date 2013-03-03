@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION["userid"])){
+if(!isset($_SESSION["userid"]) || $_SESSION["type"]!="operator"){
 	header("Location:../index.php");
 	
 	}
@@ -51,6 +51,15 @@ require '../mysql_connect.php';
                     </a>
                     <a class="brand" href="#">Potato Tracking</a>
                     <div class="nav-collapse collapse">
+                    
+                     <p class="navbar-text pull-right">(<?php echo $_SESSION['type']?>)</a>
+            		<a href="../logout.php" class="navbar-link"> Logout</a>
+            </p>
+            
+            <p class="navbar-text pull-right">
+        		
+        Logged in as <a href="#" class="navbar-link"><i class="icon-user"></i><?php echo $_SESSION['userid'] ?></a>
+            </p>
                         <ul class="nav">
                             <li class="active"><a href="sname.php">Search</a></li>
                           

@@ -44,7 +44,7 @@ doc.text(65, 60, 'Faculty Load Reports');
 doc.rect(20, 10, 175, 60);
 doc.setFontSize(15)
 doc.text(20, 85, 'Faculty Name:<?php echo $_GET['name']; ?>');
-doc.text(150,85,'ID: <?php //echo mysql_result($eFaculty,0,0);?>');
+doc.text(150,85,'ID: <?php echo mysql_result($eFaculty,0,0);?>');
 doc.rect(20, 90, 174, 11);
 //doc.line(20, 130, 20, 140); // vertical line
 //doc.line(20, 130, 50, 130); // horizontal line

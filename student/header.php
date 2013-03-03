@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION["userid"])){
+if(!isset($_SESSION["userid"]) || $_SESSION["type"]!="student"){
 	header("Location:../index.php");
 	
 	}
@@ -21,7 +21,7 @@ require '../mysql_connect.php';
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-
+		<script src="../js/jspdf.js"></script>
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <style>
             body {
@@ -51,12 +51,22 @@ require '../mysql_connect.php';
                     </a>
                     <a class="brand" href="#">Potato Tracking</a>
                     <div class="nav-collapse collapse">
+                    
+                     <p class="navbar-text pull-right">(<?php echo $_SESSION['type']?>)</a>
+            		<a href="../logout.php" class="navbar-link"> Logout</a>
+            </p>
+            
+            <p class="navbar-text pull-right">
+        		
+        Logged in as <a href="#" class="navbar-link"><i class="icon-user"></i><?php echo $_SESSION['userid'] ?></a>
+            </p>
                         <ul class="nav">
                             <li class="active"><a href="sname.php">Search</a></li>
                           
+                          
                             
                         </ul>
-                      asd
+                      
                     </div><!--/.nav-collapse -->
                 </div>
             </div>
@@ -68,15 +78,5 @@ require '../mysql_connect.php';
 
             <!-- Example row of columns -->
             <div class="row">
-             <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Search By</li>
-              <li id="sname"><a href="sname.php"><i class="icon-user"></i>Faculty name</a></li>
-              <li id="sdaytime"><a href="sdaytime.php"><i class="icon-time"></i>Day time</a></li>
-              <li id="sroom"><a href="sroom.php"><i class="icon-home"></i>Room</a></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-
+           
 

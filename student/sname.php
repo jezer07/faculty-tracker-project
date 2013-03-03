@@ -16,6 +16,17 @@
             
              
              </script>
+               <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Search By</li>
+              <li id="sname" class="active"><a href="sname.php"><i class="icon-user"></i>Faculty name</a></li>
+              <li id="sdaytime"><a href="sdaytime.php"><i class="icon-time"></i>Day time</a></li>
+              <li id="sroom"><a href="sroom.php"><i class="icon-home"></i>Room</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+
                 <div class="span9">
           		 <?php
                  	if(isset($_GET['name'])){
@@ -43,7 +54,7 @@
 					 
 					 echo "
 					   <table class='table table-striped'>
-           	<caption>$_GET[name]</caption>
+           	<caption><h3>$_GET[name]</h3></caption>
             <thead>
            		<tr>
             		<th>#</th>
@@ -73,21 +84,16 @@
 							
 							$ctr++;
 							}//while
-						
+								   echo "</tr>"; 
+								   echo "
+								   </tbody>
+								   </table>
+								   
+								   ";
 						
 						
 							}
-					
-					 
-          			 echo "</tr>";
-		   
-		   
-		   echo "
-		   
-		   </tbody>
-		   </table>";
-					 }
-					 else{
+								 else{
 						 echo "
 						     <div class='alert alert-error'>
 							There are no faculty with that name.
@@ -97,6 +103,10 @@
 						 
 						 }
 				 
+					
+					 
+					 }
+				
 				  
 			  
 			  ?>  
