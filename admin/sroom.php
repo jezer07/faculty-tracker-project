@@ -1,4 +1,5 @@
 	<?php include("header.php");?>
+    <div class="row">
 <div class="span3">
 <div class="well sidebar-nav">
 <ul class="nav nav-list">
@@ -110,6 +111,7 @@ echo "
 
 
 ?>
+</div>
 </div>
 </div>
 
