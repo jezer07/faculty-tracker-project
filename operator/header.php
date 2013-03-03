@@ -53,7 +53,7 @@ require '../mysql_connect.php';
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li class="active"><a href="sname.php">Search</a></li>
-                            <li class="ac"><a href="reports.php">Reports</a></li>
+                            <li class="ac"><a href="rname.php">Reports</a></li>
                           
                             
                         </ul>
@@ -69,15 +69,5 @@ require '../mysql_connect.php';
 
             <!-- Example row of columns -->
             <div class="row">
-             <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Search By</li>
-              <li id="sname"><a href="sname.php"><i class="icon-user"></i>Faculty name</a></li>
-              <li id="sdaytime"><a href="sdaytime.php"><i class="icon-time"></i>Day time</a></li>
-              <li id="sroom"><a href="sroom.php"><i class="icon-home"></i>Room</a></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-
+           
 
