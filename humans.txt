@@ -3,11 +3,15 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    <Jezer> -- <Developer> -- <Potato>
+	<Rea> -- <Developer> -- <Potato>
+	<Ryan> -- <Database Admin> -- <Potato>
+	<Jude> -- <Reports Designer> -- <Potato>
+	<Jolly> -- <Reports Designer> -- <Potato>
 
 # THANKS
 
-    <name>
+    <To Mam Amphie>
 
 # TECHNOLOGY COLOPHON
 
