@@ -5,9 +5,9 @@
 
     <Jezer> -- <Developer> -- <Potato>
 	<Rea> -- <Developer> -- <Potato>
-	<Ryan> -- <Database Admin> -- <Potato>
-	<Jude> -- <Reports Designer> -- <Potato>
-	<Jolly> -- <Reports Designer> -- <Potato>
+	<Ryan> -- <Database Admin/tester> -- <Potato>
+	<Jude> -- <Reports Designer/tester> -- <Potato>
+	<Jolly> -- <Reports Designer/tester> -- <Potato>
 
 # THANKS
 
