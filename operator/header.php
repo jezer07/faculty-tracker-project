@@ -53,7 +53,7 @@ require '../mysql_connect.php';
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li class="active"><a href="sname.php">Search</a></li>
-                            <li class="ac"><a href="rname.php">Reports</a></li>
+                          
                           
                             
                         </ul>

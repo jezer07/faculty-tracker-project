@@ -1,8 +1,15 @@
+<?php include '../mysql_connect.php';
+								
+$qFaculty = "SELECT name,sectionid,subjectid,day,DATE_FORMAT(start,'%k:%i') as start,DATE_FORMAT(end,'%k:%i')as end FROM faculties JOIN schedules ON faculties.id = schedules.facultyid WHERE room = '$_GET[room]' order by name asc,end desc";
+$eFaculty = mysql_query($qFaculty) or die(mysql_error());
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title></title>
 
 <script src="../js/jspdf.js"></script> 
 <script src="../js/vendor/jquery-1.9.1.min.js"></script> 
@@ -19,7 +26,7 @@ doc.text(71, 30, 'POTATO');
 doc.setFontSize(30)
 doc.text(35, 50, 'Faculty Tracking System');
 doc.setFontSize(20)
-doc.text(75, 60, 'Room Reports');
+doc.text(75, 60, 'Day Time Reports');
 doc.rect(20, 10, 175, 60);
 doc.setFontSize(15)
 //doc.text(20, 85, 'Faculty Name: Mean Taduyo');
@@ -37,24 +44,33 @@ doc.line(167, 90, 167, 101);//v
 //doc.line(170, 130,195, 130);//h
 //doc.line(195, 140, 195, 130);//v
 //doc.line(20,140,195,140);
-doc.text(20,85,'ROOM: H410')
+doc.text(20,85,'Room:<?php echo $_GET['room']?>');
 doc.setFontSize(13)
 doc.text(30,97,'Faculty Name');
 doc.text(79,97,'Subject');
 doc.text(110,97,'Section');
 doc.text(146,97,'Day');
 doc.text(174,97,'Time');
-doc.setFontSize(10)
-doc.text(22,110,'Mary Ellaine Cervantes');
-//doc.text(22,117,'2.');
-//doc.text(22,124,'3.');
-//doc.text(61,110,'304I');
-doc.text(84,110,'ITC-32');
-doc.text(115,110,'304I');
-doc.text(145,110,'Monday')
-doc.text(171,110,'7:30-8:30')
-doc.rect(20, 103, 175, 185);
-	doc.output('datauri');
+doc.setFontSize(10);
+
+
+
+<?php 
+$y=110;
+while($row=mysql_fetch_assoc($eFaculty)){
+echo "
+		doc.text(22,$y,'$row[name]');
+		doc.text(84,$y,'$row[subjectid]');
+		doc.text(115,$y,'$row[sectionid]');
+		doc.text(145,$y,'$row[day]')
+		doc.text(171,$y,'$row[start]-$row[end]')
+	
+			";
+			$y+=7;
+}
+	?>
+		doc.rect(20, 103, 175, 185);
+doc.output('datauri');
 
 </script>
 

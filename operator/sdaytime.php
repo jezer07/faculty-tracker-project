@@ -7,7 +7,7 @@
             <ul class="nav nav-list">
               <li class="nav-header">Search By</li>
               <li id="sname"><a href="sname.php"><i class="icon-user"></i>Faculty name</a></li>
-              <li id="sdaytime"><a href="sdaytime.php"><i class="icon-time"></i>Day time</a></li>
+              <li id="sdaytime" class="active"><a href="sdaytime.php"><i class="icon-time"></i>Day time</a></li>
               <li id="sroom"><a href="sroom.php"><i class="icon-home"></i>Room</a></li>
             </ul>
           </div><!--/.well -->
@@ -130,10 +130,15 @@ echo "
 </div>
 </div>
 
+
+
 ";
 							
 							}//while
-							
+							echo "  <br/>
+								   <br/>
+								   <br/>
+								   <a class='btn btn-primary' href='printday.php?day=$_GET[day]' target='_new'><i class='icon-print icon-white'></i> Print Report</a> ";
 						
 						}//if
 					else{

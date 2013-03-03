@@ -20,7 +20,7 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Search By</li>
-              <li id="sname"><a href="sname.php"><i class="icon-user"></i>Faculty name</a></li>
+              <li id="sname" class="active"><a href="sname.php"><i class="icon-user"></i>Faculty name</a></li>
               <li id="sdaytime"><a href="sdaytime.php"><i class="icon-time"></i>Day time</a></li>
               <li id="sroom"><a href="sroom.php"><i class="icon-home"></i>Room</a></li>
             </ul>
@@ -84,21 +84,20 @@
 							
 							$ctr++;
 							}//while
-						
+								   echo "</tr>"; 
+								   echo "
+								   </tbody>
+								   </table>
+								   <br/>
+								   <br/>
+								   <br/>
+								   <a class='btn btn-primary' href='printfaculty.php?name=$_GET[name]' target='_new'><i class='icon-print icon-white'></i> Print Report</a>
+								   
+								   ";
 						
 						
 							}
-					
-					 
-          			 echo "</tr>";
-		   
-		   
-		   echo "
-		   
-		   </tbody>
-		   </table>";
-					 }
-					 else{
+								 else{
 						 echo "
 						     <div class='alert alert-error'>
 							There are no faculty with that name.
@@ -108,6 +107,10 @@
 						 
 						 }
 				 
+					
+					 
+					 }
+				
 				  
 			  
 			  ?>  
