@@ -33,7 +33,7 @@ switch ($_GET['day']){
 								
 								}
 								
-$qFaculty = "SELECT name,sectionid,subjectid,room,DATE_FORMAT(start,'%k:%i') as start,DATE_FORMAT(end,'%k:%i')as end FROM faculties JOIN schedules ON faculties.id = schedules.facultyid WHERE day ='m' order by name asc,end desc";
+$qFaculty = "SELECT name,sectionid,subjectid,room,DATE_FORMAT(start,'%k:%i') as start,DATE_FORMAT(end,'%k:%i')as end FROM faculties JOIN schedules ON faculties.id = schedules.facultyid WHERE day ='$_GET[day]' order by name asc,end desc";
 $eFaculty = mysql_query($qFaculty);
 
 

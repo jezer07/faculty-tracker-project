@@ -6,7 +6,6 @@ $password =$_POST["password"];
 
 $qUser = "SELECT * FROM users where username='$username' AND password=SHA('$password')";
 
-echo $qUser;
 
 $eUser = mysql_query($qUser);
 

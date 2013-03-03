@@ -1,19 +1,5 @@
         <?php include("header.php");?>
-<div class="row">
-             <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Actions</li>
-              <li class="active"><a href="sections.php"><i class="icon-eye-open"></i>View Sections</a></li>
-              <li><a href="addsections.php"><i class=" icon-plus-sign"></i>Add Sections</a></li>
-              
 
-             
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-        
-                <div class="span4">
               <?php
                                    
                                         $section = $_POST['section'];
@@ -27,11 +13,9 @@
                                         {
                                         $query = "Update sections set id='$section' WHERE id='$id'";
                                         mysql_query($query);
-                                        echo "<div class='alert alert-success'><button type='button' class='close data-dismiss='alert>&times;</button><h4>Success!</h4>Your request has been carried out without a hitch!</div>";
+                                        header("Location:sections.php?success=1");
                                         }
                 ?>
-               
-            	</div>
 
         <!-- /container -->
      <?php include("footer.php");?>

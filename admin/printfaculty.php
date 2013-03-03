@@ -7,7 +7,7 @@ $qFaculty = "SELECT faculties.id,name,sectionid,subjectid,room,day,DATE_FORMAT(s
 $eFaculty= mysql_query($qFaculty);
 
 if(mysql_num_rows($eFaculty)<1){
-header("Location:reports.php?name=$_GET[name]&error=1");
+header("Location:sname.php?name=$_GET[name]&error=1");
 exit();
 	}
 

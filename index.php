@@ -77,33 +77,33 @@
   <div class="carousel-inner">
     <div class="active item"><img src="img/1.jpg"/>
     <div class="carousel-caption">
-                      <h4>First Thumbnail label</h4>
-                      <p></p>
+                      <h4>Aristotle</h4>
+                      <p>"It is the mark of an educated mind to be able to entertain a thought without accepting it."  </p>
                     </div></div>
     <div class="item"><img src="img/2.jpg"/>
     <div class="carousel-caption">
-                      <h4>First Thumbnail label</h4>
-                      <p></p>
+                      <h4>Mahatma Gandhi</h4>
+                      <p>"Live as if you were to die tomorrow. Learn as if you were to live forever." </p>
                     </div></div>
     <div class="item"><img src="img/3.jpg"/>
     <div class="carousel-caption">
-                      <h4>First Thumbnail label</h4>
-                      <p></p>
+                      <h4>Nelson Mandela</h4>
+                      <p>"Education is the most powerful weapon which you can use to change the world." </p>
                     </div></div>
     <div class="item"><img src="img/4.jpg"/>
     <div class="carousel-caption">
-                      <h4>First Thumbnail label</h4>
-                      <p></p>
+                      <h4>C.S. Lewis</h4>
+                      <p>"The task of the modern educator is not to cut down jungles, but to irrigate deserts." </p>
                     </div></div>
     <div class="item"><img src="img/5.jpg"/>
     <div class="carousel-caption">
-                      <h4>First Thumbnail label</h4>
-                      <p></p>
+                      <h4>C.S. Lewis</h4>
+                      <p>"Education without values, as useful as it is, seems rather to make man a more clever devil." </p>
                     </div></div>
     <div class="item"><img src="img/6.jpg"/>
     <div class="carousel-caption">
-                      <h4>First Thumbnail label</h4>
-                      <p></p>
+                      <h4>Leonardo da Vinci</h4>
+                      <p>"Study without desire spoils the memory, and it retains nothing that it takes in." </p>
                     </div></div>
   </div>
   <!-- Carousel nav -->

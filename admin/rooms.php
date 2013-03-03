@@ -1,4 +1,5 @@
-        <?php include("header.php");?>
+        <?php include("header.php");
+		 error_reporting(E_ERROR | E_PARSE);?>
 <div class="row">
              <div class="span3">
           <div class="well sidebar-nav">
@@ -16,6 +17,11 @@
                 <fieldset>
     <legend>Rooms</legend>
                <?php
+			   $success=$_GET['success'];
+			   if ($success==1)
+			   {
+				    echo "<div class='alert alert-success'><button type='button' class='close data-dismiss='alert>&times;</button><h4>Success!</h4>Your request has been carried out without a hitch!</div>";
+				   }
                         $rRoom=@mysql_query("select * from rooms");
                                         
                                 $i=1;

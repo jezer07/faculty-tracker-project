@@ -1,4 +1,14 @@
         <?php include("header.php");?>
+<<<<<<< HEAD
+=======
+<div class="row">
+             <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Actions</li>
+              <li><a href="viewloads.php"><i class="icon-eye-open"></i> View Loads</a></li>
+              <li class="active"><a href="loads.php"><i class="icon-eye-open"></i> Add Loads</a></li>
+>>>>>>> 80c29dbbf700d60c055424f4b1fb869d633c8260
 
               <?php
 
@@ -20,20 +30,22 @@
 							
 							}
 							
-						$conflict= "SELECT * FROM schedules JOIN faculties on faculties.id=schedules.facultyid WHERE schedules.facultyid='$faculty' AND day='$day' AND (start <='$start' and end >'$start')";
+						$conflict= "SELECT * FROM schedules JOIN faculties on faculties.id=schedules.facultyid WHERE schedules.facultyid='$faculty' AND day='$day' AND (start between '$start' and '$end')";
 						
 						$checkconf= mysql_query($conflict);
 						echo mysql_num_rows($checkconf);
 						
 						
 						if(mysql_num_rows($checkconf)>0){
-							
-							header("Location:loads.php?error=2");
+							echo $conflict;
+							//header("Location:loads.php?error=2");
 						exit();
 							
 							}
 							echo $conflict;
-													
+						
+							
+								exit();										
 						$q = "Insert into schedules values ('', '$subject', '$section', '$faculty', '$room', '$day', '$start', '$end')";
 						$r = @mysql_query($q);
 						echo "<div class='alert alert-success'><button type='button' class='close data-dismiss='alert>&times;</button><h4>Success!</h4>Your request has been carried out without a hitch!</div>";
