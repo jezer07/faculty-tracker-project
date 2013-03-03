@@ -64,7 +64,7 @@ require '../mysql_connect.php';
             </p>
                     
                         <ul class="nav">
-                            <li class="active"><a href="#">Search</a></li>
+                            <li class="active"><a href="sname.php">Search</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">File Maintenance <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
