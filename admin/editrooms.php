@@ -23,14 +23,21 @@
                                 $row = mysql_fetch_array($rUsers);
                                 if ($row)
                                 {
-                                echo "<form action='editedrooms.php' method='post'>";
+                                echo "<form action='editedrooms.php' method='post' class='form-horizontal'>";
 								echo "<input type=hidden name=id value='$row[0]'>";
-								echo "Room : " . "<input type=text name=room value='$row[0]'> <br>";
-                                echo "Room Type : " . "<input type=text name=type value='$row[1]'> <br>";
-                               
-                                                                
-                                echo "<p><input type='submit' name='update' value='Update' /></p>
-                                </form>";
+								echo "<div class='control-group'>";
+								echo "<label class='control-label'>Room : </label>";
+								echo "<div class='controls'>";
+								echo "<input type=text name=room value='$row[0]'> <br>";
+								echo "</div></div>"; 
+								echo "<div class='control-group'>";
+								echo "<label class='control-label'>Room Type : </label>";
+								echo "<div class='controls'>";
+                                echo "<input type=text name=type value='$row[1]'> <br>";
+                               echo "</div></div>";                            
+								echo "<div class='control-group'>";
+								echo "<div class='controls'>";   
+                                echo "<button type='submit' name='submit' class='btn btn-primary'>Update</button></div></div></form>";
                                 }
 
                                         

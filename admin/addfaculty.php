@@ -38,7 +38,7 @@
                       <div class="control-group">
                         <label class="control-label">Email: </label>
                         <div class="controls">
-                          <input type="text" name="email" placeholder="Email">
+                          <input type="email" name="email" placeholder="Email">
                         </div>
                       </div>
                       <div class="control-group">
